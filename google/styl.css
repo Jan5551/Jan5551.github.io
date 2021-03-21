@@ -187,7 +187,38 @@ footer  {
     color: rgba(0,0,0,.54);
 }
 
+.links {
+	border-top: 1px solid #ddd;
+	display: flex;
+	color: #70757a;
+	padding: 5px 0px;
+}
 
+.link_1 {
+	padding-left: 18.7px;
+	flex: 1;
+	justify-content: flex-start;
+    min-width: 40%;
+    order: 1;
+}
+
+.link_2 {
+	padding-left: 18.7px;
+	order: 2;
+	flex: 1;
+
+}
+
+.link_2 .leaf {
+	height: 15px;
+	padding-right: 5px;
+}
+
+.link_3 {
+	padding-right: 18.7px;
+	order: 3;
+	justify-content: flex-end;
+}
 
 
 
