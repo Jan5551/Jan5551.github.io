@@ -187,6 +187,20 @@ footer  {
     color: rgba(0,0,0,.54);
 }
 
+footer a {
+	color: rgba(0,0,0, 0.54);
+	display: inline-block;
+	padding: 12px 11.3px;
+	font-size: 14px;
+	
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+
+
 .links {
 	border-top: 1px solid #ddd;
 	display: flex;
