@@ -99,19 +99,24 @@ text-align:center;
 
 .okienko_wyszukiwania
 {
-    display: block;
-border: 1px solid #ddd;
-font-size: 16px;
-padding: 13px;
-    padding-left: 13px;
-padding-left: 45px;
-border-radius: 25px;
-width: 100%;
-transition: box-shadow 100ms;
-outline: none;
-cursor: auto;
-     text-align: center;
+
+      border-radius: 25px;
+    border: 1px solid #f8f9fa;
+      border-color: ;
+      padding: 2px;
+     
+      height:35px;
+     background-color: #f8f9fa;
+	color: #3c4043;
+width: 580px;
+	margin: 0px auto;
+	position: relative;
+	margin-top: -8px;
+	text-align: center;
+
+
 }
+
 
 
 .logowanie
