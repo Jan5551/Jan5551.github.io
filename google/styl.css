@@ -156,6 +156,17 @@ text-align:center;
   
 }
 
+.od
+{
+ text-align: center;
+  display: block;
+  margin: auto;
+  margin-top:350px;
+  clear: both;
+  
+}
+
+
 
 ul {
   list-style: none;
