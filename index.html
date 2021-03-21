@@ -1,297 +1,463 @@
-<!DOCTYPE html>
-<html>
-<title>Web Page Design</title>
+<<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<style type="text/css">
-
-.gb_ae 
-{
-    
-   font-family: 'Roboto', sans-serif;
-    font-weight: 550;
-    font-size: 16px;
-   
-    letter-spacing: .25px;
-    line-height: 16px;
-    margin-left: 10px;
-    margin-right: 8px;
-    min-width: 96px;
-    padding: 9px 23px;
-    text-align: center;
-    vertical-align: middle;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    color:white;
-}
-
-
-
-
-.center 
-{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
-  width:27%;
-
-     padding-top:50px;
-    
-text-align:center;
-    
-}
-
-
-.okienko_wyszukiwania
-{
-    
-      border-radius: 25px;
-      border: 0.3px solid ;
-      border-color: light gray;
-      padding: 2px;
-      width: 500px;
-      height:35px;
-     
-}
-
-
-.logowanie
-{
-    background: #1a73e8;
-    border: 1px solid transparent;
-    
-    height:40px;   
-    border-radius: 3px;
-    margin-right: 90px;
-  font-family: 'Roboto', sans-serif;
-    
-}
-
-.czcionka
-{
-     font-family: 'Roboto', sans-serif;
-    font-size:24 ;
-      text-align: center;
-}
-
-
-
-.ikony
-{
-    
-    margin-left: 2px;
-    margin-right: 6px;
-    margin-top:0.65px;
-
-    }
-
-.ikona
-{
-    
-    margin-left: 8px;
-    margin-right: 2px;
-    margin-top:7.5px;
-}
-
-
-    
-
-.przyciski
-{
-  text-align: center;
-  padding-top: 35px;
-  margin-bottom: 100px;
-
-  font-size: 24px ;
-    height: 40px;
-}
-
-
-.a
-{
- text-align: center;
-  display: block;
-  margin: auto;
-  margin-top:310px;
-  clear: both;
-  
-}
-
-
-ul {
+	<meta charset="UTF-8">
+	<title>Resume/CV Design</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   list-style: none;
+  font-family: "Montserrat", sans-serif;
 }
 
-.footer-right {
-  float: right;
-margin-bottom: 0; 
-    
-}
-
-footer ul li {
-  display: inline;
-  color: #666666;
+body {
+  background: #585c68;
   font-size: 14px;
-  padding: 13px;
+  line-height: 22px;
+  color: #555555;
 }
 
-footer ul {
-  float: left;
-  padding: 1px;
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
-footer ul a:hover {
-  text-decoration: underline;
+.semi-bold {
+  font-weight: 500;
+  font-size: 16px;
 }
 
-
-a2 {
-  text-decoration: none;
-  color: inherit;
-font-family: 'Roboto', sans-serif;
-    font-size: 16px ;
-    
-    
+.resume {
+  width: 800px;
+  height: auto;
+  display: flex;
+  margin: 50px auto;
 }
 
-
-.footer-left {
-   text-align: center;
-   margin-bottom: 0; 
-   padding-top: 10px;
-    
- }
-
-
-.obramowanie 
-{
-    width:100%;
-    height:5%;
-    border-bottom: 1px solid #dadce0;
-    font-size: 15px;
-    color: rgba(0,0,0,.54);
+.resume .resume_left {
+  width: 280px;
+  background: #0bb5f4;
 }
 
-
-footer  {
-  background: #f2f2f2;
-  border-top: solid 2px #e4e4e4;
-/*   position: fixed; */
- margin-top:461px;
-  bottom: 0;
-  padding-bottom: 0;
+.resume .resume_left .resume_profile {
   width: 100%;
-  
+  height: 280px;
 }
 
-.uU7dJb {
-    padding: 15px 30px;
-    border-bottom: 1px solid #dadce0;
-    font-size: 15px;
-    color: rgba(0,0,0,.54);
+.resume .resume_left .resume_profile img {
+  width: 100%;
+  height: 100%;
 }
 
+.resume .resume_left .resume_content {
+  padding: 0 25px;
+}
 
+.resume .title {
+  margin-bottom: 20px;
+}
+
+.resume .resume_left .bold {
+  color: #fff;
+}
+
+.resume .resume_left .regular {
+  color: #b1eaff;
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 2px solid #b1eaff;
+}
+
+.resume .resume_left .resume_item:last-child,
+.resume .resume_right .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.resume .resume_left ul li {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.resume .resume_left ul li:last-child {
+  margin-bottom: 0;
+}
+
+.resume .resume_left ul li .icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #0bb5f4;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.resume .icon i,
+.resume .resume_right .resume_hobby ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resume .resume_left ul li .data {
+  color: #b1eaff;
+}
+
+.resume .resume_left .resume_skills ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #009fd9;
+  position: relative;
+}
+
+.resume .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.resume .resume_left .resume_social .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.resume .resume_right {
+  width: 520px;
+  background: #fff;
+  padding: 25px;
+}
+
+.resume .resume_right .bold {
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul,
+.resume .resume_right .resume_education ul {
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.resume .resume_right ul li {
+  position: relative;
+}
+
+.resume .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 20px;
+}
+
+.resume .resume_right ul li:last-child .info {
+  margin-bottom: 0;
+}
+
+.resume .resume_right .resume_work ul li:before,
+.resume .resume_right .resume_education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul li:after,
+.resume .resume_right .resume_education ul li:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume .resume_right .resume_hobby ul li {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #0bb5f4;
+  border-radius: 50%;
+  position: relative;
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul li i {
+  font-size: 30px;
+}
+
+.resume .resume_right .resume_hobby ul li:before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -52px;
+  width: 50px;
+  height: 2px;
+  background: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul li:last-child:before {
+  display: none;
+}
 
 </style>
-
-
 </head>
-
-
 <body>
 
-
-<!--Logo-->
-<img src="https://www.google.pl/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" class="a">
-
-<!--Lupa i Klawiatura w okienku wyszukiwania-->
-<div class="center"><div class="okienko_wyszukiwania"><div class="ikona"> <img src="https://icon-library.com/images/google-search-icon/google-search-icon-14.jpg" align="left" height=15px><div class="ikony"> <img src="http://bizweb.dktcdn.net/100/093/811/themes/116804/assets/main_menu_icon_1.png?1605862991921" align="right"  height=20px></div></div></div></div>
-
-
-<!--Zaloguj się-->
-
-<div class="logowanie" style="position: absolute; top: 0.4%; right: 0; width: 155px; text-align:right;"><div class="gb_ae"> Zaloguj się</div></div>
-
-
-<!--Przyciski pod wyszukiwaniem-->
-
-<div class="przyciski" ><input type="submit" value="Szukaj w Google " id="google_search">
-      <input type="submit" value="Szczęśliwy traf" id="im_feeling_lucky"  >
+<div class="resume">
+   <div class="resume_left">
+     <div class="resume_profile">
+       <img src="https://pbs.twimg.com/profile_images/809881928832864260/f06getWx_400x400.jpg">
+     </div>
+     <div class="resume_content">
+       <div class="resume_item resume_info">
+         <div class="title">
+           <p class="bold">Jan Koterwa</p>
+           <p class="regular">Student AGH</p>
+         </div>
+         <ul>
+           <li>
+             <div class="icon">
+               <i class="fas fa-map-signs"></i>
+             </div>
+             <div class="data">
+              Michałowicza 56/56 <br /> 43-300 Bielsko-Biała
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fas fa-mobile-alt"></i>
+             </div>
+             <div class="data">
+              602 345 178
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fas fa-envelope"></i>
+             </div>
+             <div class="data">
+               jankoterwa@wp.pl
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-skype"></i>
+             </div>
+             <div class="data">
+              Jan Koterwa
+             </div>
+           </li>
+         </ul>
+       </div>
+       <div class="resume_item resume_skills">
+         <div class="title">
+           <p class="bold">Znajomość języków programowania</p>
+         </div>
+         <ul>
+           <li>
+             <div class="skill_name">
+               R
+             </div>
+             <div class="skill_progress">
+               <span style="width: 45%;"></span>
+             </div>
+             <div class="skill_per">45%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+              C#
+             </div>
+             <div class="skill_progress">
+               <span style="width: 25%;"></span>
+             </div>
+             <div class="skill_per">25%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+              C++
+             </div>
+             <div class="skill_progress">
+               <span style="width: 20%;"></span>
+             </div>
+             <div class="skill_per">20%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+               C
+             </div>
+             <div class="skill_progress">
+               <span style="width: 15%;"></span>
+             </div>
+             <div class="skill_per">15%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+               Python
+             </div>
+             <div class="skill_progress">
+               <span style="width: 5%;"></span>
+             </div>
+             <div class="skill_per">5%</div>
+           </li>
+         </ul>
+       </div>
+       <div class="resume_item resume_social">
+         <div class="title">
+           <p class="bold">Portale społecznościowe i inne</p>
+         </div>
+         <ul>
+           <li>
+             <div class="icon">
+               <i class="fab fa-facebook-square"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Facebook</p>
+               <p>Jan Koterwa</p>
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-instagram-square"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Instagram</p>
+               <p>echecc33</p>
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-youtube"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Youtube</p>
+               <p>kanał Pepsi Max</p>
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-github"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">GitHub</p>
+               <p>Jan5551</p>
+             </div>
+           </li>
+         </ul>
+       </div>
+     </div>
+  </div>
+  <div class="resume_right">
+    <div class="resume_item resume_about">
+        <div class="title">
+           <p class="bold">Podsumowanie</p>
+         </div>
+        <p>Student drugiego roku Ekonomtrii i Informatyki na AGH, poszukuje pracy związanej z szeroko pojętym data science, gdzie mógłbym wykorzystać wiedzę ekonometryczną oraz znajomość języka R. Biegle posługuję się językiem angielskim, a w bardzo podstawowym stopniu również niemieckim i rosyjskim. Staram się być pracowity i jestem gotowy pracować dłużej niz jest to wymagane</p>
     </div>
-
-
-<!--przycisk Aplikacje -->
-<img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_apps_48px-512.png" style="position: absolute; top: 0.5%; right: 14%; width: 32px; text-align:right;"> 
-
-<!--Górny prawy róg -->
-<div class="czcionka" style="position: absolute; top: 1%; right: 18.5%; width: 32px; text-align:right;"> Grafika </div>
-<div class="czcionka" style="position: absolute; top: 1%; right: 21.8%; width: 32px; text-align:right;"> Gmail </div>
-
-
-
-<!--Polska -->
-
-<ul class="footer-left" style="position: absolute; bottom: 45px; left:0">
- <li><a2 href="#">Polska</a2></li>
-
+    <div class="resume_item resume_work">
+        <div class="title">
+           <p class="bold">Doświadczenie</p>
+         </div>
+        <ul>
+            <li>
+                <div class="date">07/2019 - 09/2019</div> 
+                <div class="info">
+                     <p class="semi-bold">Inwentaryzacje towarów dla Tesco</p> 
+                  
+                </div>
+            </li>
+            <li>
+              <div class="date"> Od 09/2019</div>
+              <div class="info">
+                     <p class="semi-bold">Statystyk w Bielskiej Lidze Koszykówki</p> 
+                
+                </div>
+            </li>
+            <li>
+              <div class="date">Od 10/2019</div>
+              <div class="info">
+                     <p class="semi-bold">Statystyk PZKosz w DAAS BH Bielsko-Biała</p> 
+                  
+                </div>
+            </li>
         </ul>
-    
+    </div>
+    <div class="resume_item resume_education">
+      <div class="title">
+           <p class="bold">Wykształcenie</p>
+         </div>
+      <ul>
+            <li>
+                <div class="date">Od 10/2019</div> 
+                <div class="info">
+                     <p class="semi-bold">Akademia Hutniczo-Górnicza, Kraków<br>Kierunek Ekonometria i Informatyka</p> 
+                
+                </div>
+            </li>
+            <li>
+              <div class="date">09/2016 - 05/2019</div>
+              <div class="info">
+                     <p class="semi-bold">V Liceum Ogólnokształcące w Bielsku-Białej<br>Profil z roszerzoną matematyką, geografią, j.angielskim i informatyką</p> 
 
-<!--Dolny pasek-->
-
-<footer>
- 
-   <ul class="footer-left"  style="position: absolute; bottom: 5px; left:1.6%">
-          <li><a2 href="#">O nas</a2></li>
-          <li><a2 href="#">Reklamuj się</a2></li>
-          <li><a2 href="#">Dla firm</a2></li> 
-          <li><a2 href="#">Jak działa wyszukiwarka</a2></li> 
-       
+                </div>
+            </li>
         </ul>
-         <ul class="footer-right" style="position: absolute; bottom: 5px; right:1%;" >    
-          <li><a2 href="#">Prywatność</a2></li>
-          <li><a2 href="#">Warunki</a2></li>
-          <li><a2 href="#">Ustawienia</a2></li>
-     
-        </ul>       
-   
-    </footer>      
-  
+    </div>
+    <div class="resume_item resume_hobby">
+      <div class="title">
+           <p class="bold">Umiejętności</p>
+         </div>
+       <ul>
+        <p class="semi-bold"> <b>Język angielski</b> - poziom B2+/C1<br/>
+        <b>Język niemiecki</b> - poziom A2<br/>
+        <b>Język rosyjski</b> - poziom A1<br/></p>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
