@@ -113,7 +113,7 @@ width: 580px;
 	position: relative;
 	margin-top: -8px;
 	text-align: center;
-align content: flex-start;
+align content: start;
 }
 
 
@@ -157,8 +157,6 @@ align content: flex-start;
 }
 
 
-    
-
 .przyciski
 {
   text-align: center;
@@ -182,10 +180,6 @@ align content: flex-start;
 
 
 
-
-
-
-
 footer ul a:hover {
   text-decoration: underline;
 }
@@ -199,8 +193,6 @@ font-family: 'Roboto', sans-serif;
     
     
 }
-
-
 
 
 
