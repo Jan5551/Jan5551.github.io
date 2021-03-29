@@ -35,56 +35,7 @@
     margin-left: auto;
     background-color: white;
     }
-   .results .center
-{
-    display:none;
-}
 
-.results .okienko_wyszukiwania
-{
-    display:none;
-}
-
-.results .ikona
-{
-    display:none;
-}
-    
-    .results .ikony
-{
-    display:none;
-}
-    
-.results .logowanie
-{
-    display:none;
-}
-    
-  .results .buttons
-{
-    display:none;
-}
-    
-    .results .links
-{
-    display:none;
-}    
-    
-    
-    .results .link_1
-{
-    display:none;
-}    
-
-    .results .link_2
-{
-    display:none;
-}    
-
-    .results .link_3
-{
-    display:none;
-}    
 
 
 .results #searchbarbutton {
@@ -493,14 +444,69 @@
   letter-spacing: normal;
   text-align: center;
 }
+
 .results #granica
  {
  padding: 7.5px; 
  border-right: 1px solid lightgray;
      padding-right: 25px;   
  }
+
+
 .results ukrycie
 {
  display:none;
 
 }
+
+
+   .results .center
+{
+    display:none;
+}
+
+.results .okienko_wyszukiwania
+{
+    display:none;
+}
+
+.results .ikona
+{
+    display:none;
+}
+    
+    .results .ikony
+{
+    display:none;
+}
+    
+.results .logowanie
+{
+    display:none;
+}
+    
+  .results .buttons
+{
+    display:none;
+}
+    
+    .results .links
+{
+    display:none;
+}    
+    
+    
+    .results .link_1
+{
+    display:none;
+}    
+
+    .results .link_2
+{
+    display:none;
+}    
+
+    .results .link_3
+{
+    display:none;
+}    
