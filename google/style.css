@@ -404,7 +404,7 @@
     direction: row;
     margin-left: 175px;
     position: relative;
-    top: 0px;
+    top: -12px;
 }
 
 .results #footerlocation p:nth-of-type(1) {
