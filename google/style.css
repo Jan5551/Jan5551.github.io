@@ -110,7 +110,7 @@ body.results {
     bottom: 14px;
 }
 
-#optionsmenuactive::after {
+.results #optionsmenuactive::after {
     content: '';
     display: block;
     position: absolute;
@@ -347,7 +347,7 @@ body.results {
     position: relative;
 }
 
-.pagelistnext {
+.results .pagelistnext {
     margin-left: 40px;
     font-size: 13px;
 }
@@ -430,7 +430,7 @@ body.results {
   color: rgb(236, 184, 29);
 }
 
-.results table {
+.results .table {
   margin: 120 auto;
   text-align: center;
   letter-spacing: -0.12em;
