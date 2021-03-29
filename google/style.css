@@ -3,10 +3,6 @@
     position: relative;
     font-family: arial, sans-serif;
 }
-    body.results {
-    min-height: 100%;
-    position: relative;
-}
 
 .results #topbar {
     display: flex;
