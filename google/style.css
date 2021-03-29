@@ -1,7 +1,7 @@
 .results{
     min-height: 100%;
     position: relative;
-    font-family: arial, sans-serif;
+  
 }
 
 .results #topbar {
@@ -404,7 +404,7 @@
     direction: row;
     margin-left: 175px;
     position: relative;
-    top: -12px;
+    top: -5px;
 }
 
 .results #footerlocation p:nth-of-type(1) {
