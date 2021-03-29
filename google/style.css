@@ -427,7 +427,7 @@
   color: rgb(236, 184, 29);
 }
 
-.results table {
+.results .table {
   margin: 120 auto;
   text-align: center;
   letter-spacing: -0.12em;
