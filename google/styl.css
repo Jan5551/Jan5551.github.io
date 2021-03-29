@@ -243,14 +243,14 @@ font-family: 'Roboto', sans-serif;
     color: rgba(0,0,0,.54);
 }
 
-footer1 {
+footer {
 	background: #f2f2f2;
 	 position:absolute;
    bottom:0;
    width:100%;
 }
 
-footer1 Polska{
+footer Polska{
 	color: rgba(0,0,0, 0.54);
 	font-size: 15px;
 	line-height: 43px;
@@ -259,7 +259,7 @@ footer1 Polska{
 	border: 1px solid #eee;
 }
 
-footer1 a {
+footer a {
 	color: rgba(0,0,0, 0.54);
 	display: inline-block;
 	padding: 12px 11.3px;
@@ -267,7 +267,7 @@ footer1 a {
 	
 }
 
-footer1 a:hover {
+footer a:hover {
 	text-decoration: underline;
 }
 
