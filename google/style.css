@@ -54,7 +54,7 @@ body.results {
     left: -3px;
 }
 
-#searchbarbutton svg path {
+.results #searchbarbutton svg path {
     fill: #4285F4
 }
 
@@ -73,7 +73,7 @@ body.results {
     z-index: 100;
 }
 
-#searchbar:hover {
+.results #searchbar:hover {
     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
