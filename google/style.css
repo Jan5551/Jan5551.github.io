@@ -25,13 +25,14 @@
     height: auto;
 }
 
-
 .results #searchbarmic {
     height: 45px;
     width: 45px;
     margin-left: auto;
     background-color: white;
-    }
+}
+
+
 
 
 
@@ -91,11 +92,11 @@
     cursor: pointer;
 }
 
- .results #searchbar button:focus {
+.results #searchbar button:focus {
     outline: none;
 }
 
- .results #boxesicon {
+.results #boxesicon {
     width: 25px;
     height: 25px;
     background-image: url('images/boxes.png');
@@ -426,7 +427,7 @@
   color: rgb(236, 184, 29);
 }
 
-.results .table {
+.results table {
   margin: 120 auto;
   text-align: center;
   letter-spacing: -0.12em;
@@ -441,14 +442,12 @@
   letter-spacing: normal;
   text-align: center;
 }
-
 .results #granica
  {
  padding: 7.5px; 
  border-right: 1px solid lightgray;
      padding-right: 25px;   
  }
-
 
 .results ukrycie
 {
