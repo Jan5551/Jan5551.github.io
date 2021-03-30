@@ -82,6 +82,22 @@ nav a:hover {
     box-sizing: border-box;
     color:white;
 }
+footer {
+	background: #f2f2f2;
+	 position:absolute;
+   bottom:0;
+   width:100%;
+}
+
+
+
+footer a {
+	color: rgba(0,0,0, 0.54);
+	display: inline-block;
+	padding: 12px 11.3px;
+	font-size: 14px;
+
+}
 
 .center 
 {
