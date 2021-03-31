@@ -530,15 +530,10 @@
 }
 
 
-.results .hide
-{
-
-display: none;
-
-}
 
 
- .schowaj
+
+ .results img#hide
 {
 
 display: none;
