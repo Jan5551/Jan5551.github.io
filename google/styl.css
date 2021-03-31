@@ -1,5 +1,5 @@
 
-.a
+.home .a
 {
  text-align: center;
   display: block;
@@ -12,7 +12,7 @@
 }
 
 
-.*{
+.home .*{
 	padding: 0;
 	margin:0;
 	box-sizing: border-box;
@@ -23,7 +23,7 @@
 
 
 
-gb_ae 
+.home gb_ae 
 {
 
    font-family: 'Roboto', sans-serif;
@@ -47,13 +47,13 @@ gb_ae
 
 
 
-body {
+.home body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 }
 
-nav {
+.home nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -61,7 +61,7 @@ nav {
     margin-top: 14px;
 }
 
-nav a {
+.home nav a {
     font-size: 13px;
     display: inline-block;
     line-height: 24px;
@@ -71,13 +71,13 @@ nav a {
 	  padding: 5px 6.7px
 }
 
-nav a:hover {
+.home nav a:hover {
 	text-decoration: underline;
 	opacity: .85;
 }
 
 
-.gb_ae 
+.home .gb_ae 
 {
 
    font-family: 'Roboto', sans-serif;
@@ -98,7 +98,7 @@ nav a:hover {
     box-sizing: border-box;
     color:white;
 }
-footer {
+.home footer {
 	background: #f2f2f2;
 	 position:absolute;
    bottom:0;
@@ -107,7 +107,7 @@ footer {
 
 
 
-footer a {
+.home footer a {
 	color: rgba(0,0,0, 0.54);
 	display: inline-block;
 	padding: 12px 11.3px;
@@ -129,7 +129,7 @@ footer a {
 }
 
 
-.okienko_wyszukiwania
+.home .okienko_wyszukiwania
 {
       border-radius: 25px;
     border: 1px solid #f8f9fa;
@@ -148,7 +148,7 @@ width: 580px;
 
 
 
-.logowanie
+.home .logowanie
 {
     background: #1a73e8;
     border: 1px solid transparent;
@@ -160,7 +160,7 @@ width: 580px;
 
 }
 
-.czcionka
+.home .czcionka
 {
      font-family: 'Roboto', sans-serif;
     font-size:16px ;
@@ -178,7 +178,7 @@ width: 580px;
 
     }
 
-.ikona
+.home .ikona
 {
     
     margin-left: 8px;
@@ -186,7 +186,7 @@ width: 580px;
     margin-top:7.5px;
 }
 
-przyciski
+.home przyciski
 {
   text-align: center;
   padding-top: 35px;
@@ -202,11 +202,11 @@ przyciski
 
 
 
-footer ul a:hover {
+.home footer ul a:hover {
   text-decoration: underline;
 }
 
-a2 {
+.home a2 {
   text-decoration: none;
   color: inherit;
 font-family: 'Roboto', sans-serif;
@@ -216,7 +216,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 
-.obramowanie 
+.home .obramowanie 
 {
     width:100%;
     height:5%;
@@ -225,7 +225,7 @@ font-family: 'Roboto', sans-serif;
     color: rgba(0,0,0,.54);
 }
 
-.buttons{
+.home .buttons{
   margin-top:30px;
   margin-left:auto;
   margin-right:auto;
@@ -234,7 +234,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 
-.button{
+.home .button{
   background-color: #f5f5f5;
   border:none;
   color:#707070;
@@ -247,20 +247,20 @@ font-family: 'Roboto', sans-serif;
 
 
 
-.button:hover{
+.home .button:hover{
   border: 1px solid #c8c8c8;
   padding: 9px 19px;
   color:#808080;
 }
 
 
-.button:focus{
+.home .button:focus{
   border:1px solid #4885ed;
   padding: 9px 19px;
 }
 
 
-.uU7dJb {
+.home .uU7dJb {
     padding: 15px 30px;
     border-bottom: 1px solid #dadce0;
     font-size: 15px;
@@ -270,14 +270,14 @@ font-family: 'Roboto', sans-serif;
 
 
 
-.links {
+.home .links {
 	border-top: 1px solid #ddd;
 	display: flex;
 	color: #70757a;
 	padding: 5px 0px;
 }
 
-.link_1 {
+.home .link_1 {
 	padding-left: 18.7px;
 	flex: 1;
 	justify-content: flex-start;
@@ -286,25 +286,25 @@ font-family: 'Roboto', sans-serif;
 }
 
 
-.link_2 {
+.home .link_2 {
 	padding-left: 18.7px;
 	order: 2;
 	flex: 1;
 }
 
 
-.link_2 .leaf {
+.home .link_2 .leaf {
 	height: 15px;
 	padding-right: 5px;
 }
 
-.link_3 {
+.home .link_3 {
 	padding-right: 18.7px;
 	order: 3;
 	justify-content: flex-end;
 }
 
-.Pb9hCb {
+.home .Pb9hCb {
     height: 11px;
     margin-right: 6px;
 
