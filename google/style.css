@@ -530,7 +530,12 @@
 }
 
 
+.results .ukryj
+{
+display: none;
 
+
+}
 
 
  .results img#hide
