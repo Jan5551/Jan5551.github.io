@@ -506,7 +506,27 @@
     display:none;
 }    
 
- img#hide
+ 
+.results .footerA
+{
+
+
+ display:none;
+
+}
+
+.results .footerA Polska
+{
+
+
+ display:none;
+
+}
+
+
+
+
+img#hide
 {
 
 display:none;
