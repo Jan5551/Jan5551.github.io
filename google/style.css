@@ -530,9 +530,9 @@
 }
 
 
-.results .hide
+.results img#hide
 {
 
-display:none;
+display: none;
 
 }
