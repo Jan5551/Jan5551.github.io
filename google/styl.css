@@ -97,16 +97,23 @@
     box-sizing: border-box;
     color:white;
 }
-.home .footer {
+.home .footerA {
 	background: #f2f2f2;
 	 position:absolute;
    bottom:0;
    width:100%;
 }
 
+footerA Polska{
+	color: rgba(0,0,0, 0.54);
+	font-size: 15px;
+	line-height: 43px;
+	font-weight: 400;
+	padding-left: 29px;
+	border: 1px solid #eee;
+}
 
-
-.home .footer a {
+.home .footerA a {
 	color: rgba(0,0,0, 0.54);
 	display: inline-block;
 	padding: 12px 11.3px;
@@ -185,7 +192,7 @@ width: 580px;
     margin-top:7.5px;
 }
 
-.home przyciski
+.home .przyciski
 {
   text-align: center;
   padding-top: 35px;
@@ -201,7 +208,7 @@ width: 580px;
 
 
 
-.home .footer ul a:hover {
+.home .footerA ul a:hover {
   text-decoration: underline;
 }
 
