@@ -283,7 +283,7 @@ display:flex;
 	padding: 5px 0px;
 }
 
-.home .link_1 {
+.home link_1 {
 	padding-left: 18.7px;
 	flex: 1;
 	justify-content: flex-start;
@@ -292,7 +292,7 @@ display:flex;
 }
 
 
-.home .link_2 {
+.home link_2 {
 	padding-left: 18.7px;
 	order: 2;
 	flex: 1;
@@ -304,7 +304,7 @@ display:flex;
 	padding-right: 5px;
 }
 
-.home .link_3 {
+.home link_3 {
 	padding-right: 18.7px;
 	order: 3;
 	justify-content: flex-end;
