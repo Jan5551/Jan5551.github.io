@@ -308,7 +308,386 @@ font-family: 'Roboto', sans-serif;
     height: 11px;
     margin-right: 6px;
 
+}
 
+.results {
+    min-height: 100%;
+    position: relative;
+}
+
+.home  #topbar {
+    display:none;
+}
+
+.home  #searchbarimage {
+   display:none;
+}
+
+.home  html, body {
+ display:none;
+}
+
+.home  #searchbarmic {
+  display:none;
+}
+
+
+
+
+
+.home  #searchbarbutton {
+   display:none;
+}
+
+.home  #searchbarbutton svg {
+   display:none;
+}
+
+.home  #searchbarbutton svg path {
+display:none;
+}
+
+.home  #searchbar {
+  display:none;
+}
+
+.home  #searchbar:hover {
+    display:none;
+}
+
+.home  #searchbar > input {
+   display:none;
+}
+
+.home  #searchbar > input:focus {
+    display:none;
+}
+
+.home  #searchbar button {
+     display:none;
+}
+
+.home  #searchbar button:focus {
+      display:none;
+}
+
+.home  #boxesicon {
+      display:none;
+}
+
+.home  #optionsmenuactive::after {
+      display:none;
+}
+
+.home #optionsmenu2 {
+      display:none;
+}
+
+.home  #optionsmenu2 li {
+     display:none;
+}
+
+.home #searchresultsarea {
+      display:none;
+}
+
+.home  #searchresultsnumber {
+      display:none;
+}
+
+.home .searchresult {
+     display:none;
+}
+
+.home .searchresult h2 {
+     display:none;
+}
+
+.home  .searchresult a {
+      display:none;
+}
+
+.home  .searchresult button {
+     display:none;
+}
+
+.home  #bellicon {
+    width: 20px;
+    height: 20px;
+   
+    background-size: 12px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    position: absolute;
+    right: 180px;
+    bottom: 18px;
+}
+
+.home  #profileimage {
+    border-radius: 4px;
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    right: 60px;
+    bottom: 11px;
+}
+
+.home  #optionsbar {
+    width: 100%;
+    height: 50px;
+    border-width: 0px;
+    border-bottom: 1px;
+    border-color: lightgray;
+    border-style: solid;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Arial';
+    font-size: 13px;
+    color: rgb(112, 112, 112);
+    padding-top: 64px;
+}
+
+.home  #optionsmenu1 {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 150px;
+}
+
+.home  #optionsmenu1 li {
+    padding: 0px 10px 15px 20px;
+}
+
+.home  #optionsmenuactive {
+    color: #4285F4;
+    font-weight: bold;
+    position: relative;
+    z-index: -1;
+}
+
+.home  .searchresult p {
+    width: 625px;
+    font-size: 13px;
+    margin-top: 0px;
+    color: rgb(82, 82, 82);
+}
+
+.home  .relatedsearches h3 {
+    font-weight: normal;
+    font-size: 19px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.home  .relatedlists ul {
+    list-style: none;
+    color: rgb(29, 1, 189);
+    padding-left: 0px;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.home  .relatedlists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.home  .relatedlists ul li {
+    margin-bottom: 8px;
+}
+
+.home  .pagelist {
+    list-style: none;
+    color: rgb(29, 135, 255);
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+}
+
+.home  .pagelistprevious::before {
+    content: '<';
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: -35px;
+    color: rgb(29, 135, 255);
+    font-size: 20px;
+    transform: scale(0.7, 1.2);
+}
+
+.home  .pagelistprevious::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -40px;
+    top: -35px;
+    width: 40px;
+    height: 40px;
+    background-image: url('images/g.png');
+    background-repeat: no-repeat;
+    background-size: 28px;
+}
+
+.home  .pagelistfirst {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.home  .pagelistnumber::before, .pagelistfirst::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -2px;
+    top: -21px;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    z-index: 3;
+}
+
+.home  .pagelistnumber::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -6px;
+    top: -25px;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(255, 196, 0);
+    z-index: 2;
+}
+
+.home  .pagelistfirst::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -6px;
+    top: -25px;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    z-index: 2;
+}
+
+.home  .pagelist li {
+    margin-right: 15px;
+    position: relative;
+}
+
+.home  .pagelistnext {
+    margin-left: 40px;
+    font-size: 13px;
+}
+
+.home  .pagelistnext::before {
+    content: '>';
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: -35px;
+    color: rgb(29, 135, 255);
+    font-size: 20px;
+    transform: scale(0.7, 1.2);
+}
+
+.home .pagelistnext::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -55px;
+    top: -37px;
+    width: 50px;
+    height: 50px;
+    background-image: url('images/gle.png');
+    background-repeat: no-repeat;
+    background-size: 48px;
+}
+
+
+.home  #footer {
+    background-color: rgb(238, 238, 238);
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 13px;
+    font-family: 'arial';
+    color: rgb(85, 85, 85);
+}
+
+.home  #footermenu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 135px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.home #footermenu li {
+    padding-right: 30px;
+}
+
+.home #footerlocation {
+    display: flex;
+    direction: row;
+    margin-left: 175px;
+    position: relative;
+    top: -5px;
+}
+
+.home #footerlocation p:nth-of-type(1) {
+    font-weight: bold;
+}
+ 
+.home .blue {
+  color: rgb(50, 93, 246);
+}
+
+.home .red {
+  color: rgb(218, 63, 63);
+}
+
+.home .green {
+  color: rgb(76, 140, 68);
+}
+
+.home .yellow {
+  color: rgb(236, 184, 29);
+}
+
+.home table {
+  margin: 120 auto;
+  text-align: center;
+  letter-spacing: -0.12em;
+  font-size: 2.3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.home .pageNumber {
+  font-size: 12px;
+  color: rgb(50, 93, 246);
+  letter-spacing: normal;
+  text-align: center;
+}
+.home #granica
+ {
+ padding: 7.5px; 
+ border-right: 1px solid lightgray;
+     padding-right: 25px;   
+ }
 
 
 
