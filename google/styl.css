@@ -209,11 +209,13 @@ position:absolute;
 
 
 
-.home .footerA ul a:hover {
+.home .footerA ul a:hover 
+{
   text-decoration: underline;
 }
 
-.home a2 {
+.home a2 
+{
   text-decoration: none;
   color: inherit;
 font-family: 'Roboto', sans-serif;
@@ -235,7 +237,7 @@ font-family: 'Roboto', sans-serif;
 .home .buttons
 {
   margin-top:30px;
-  margin-left:auto;
+  margin-left:41.9%;
   margin-right:auto;
   align-content: start;
   display:flex;
@@ -271,7 +273,8 @@ font-family: 'Roboto', sans-serif;
 }
 
 
-.home .uU7dJb {
+.home .uU7dJb 
+{
     padding: 15px 30px;
     border-bottom: 1px solid #dadce0;
     font-size: 15px;
@@ -320,7 +323,8 @@ font-family: 'Roboto', sans-serif;
 	justify-content: flex-end;
 }
 
-.home .Pb9hCb {
+.home .Pb9hCb 
+{
     height: 11px;
     margin-right: 6px;
 
@@ -336,17 +340,20 @@ font-family: 'Roboto', sans-serif;
     position: relative;
 }
 
-.home  #topbar {
+.home  #topbar 
+{
     display:none;
 }
 
-.home  #searchbarimage {
+.home  #searchbarimage 
+{
    display:none;
 }
 
 
 
-.home  #searchbarmic {
+.home  #searchbarmic 
+{
   display:none;
 }
 
@@ -354,211 +361,263 @@ font-family: 'Roboto', sans-serif;
 
 
 
-.home  #searchbarbutton {
+.home  #searchbarbutton 
+{
    display:none;
 }
 
-.home  #searchbarbutton svg {
+.home  #searchbarbutton svg 
+{
    display:none;
 }
 
-.home  #searchbarbutton svg path {
+.home  #searchbarbutton svg path 
+{
 display:none;
 }
 
-.home  #searchbar {
+.home  #searchbar 
+{
   display:none;
 }
 
-.home  #searchbar:hover {
+.home  #searchbar:hover 
+{
     display:none;
 }
 
-.home  #searchbar > input {
+.home  #searchbar > input 
+{
    display:none;
 }
 
-.home  #searchbar > input:focus {
+.home  #searchbar > input:focus 
+{
     display:none;
 }
 
-.home  #searchbar button {
+.home  #searchbar button 
+{
      display:none;
 }
 
-.home  #searchbar button:focus {
+.home  #searchbar button:focus 
+{
       display:none;
 }
 
-.home  #boxesicon {
+.home  #boxesicon 
+{
       display:none;
 }
 
-.home  #optionsmenuactive::after {
+.home  #optionsmenuactive::after 
+{
       display:none;
 }
 
-.home #optionsmenu2 {
+.home #optionsmenu2 
+{
       display:none;
 }
 
-.home  #optionsmenu2 li {
+.home  #optionsmenu2 li 
+{
      display:none;
 }
 
-.home #searchresultsarea {
+.home #searchresultsarea 
+{
       display:none;
 }
 
-.home  #searchresultsnumber {
+.home  #searchresultsnumber 
+{
       display:none;
 }
 
-.home .searchresult {
+.home .searchresult 
+{
      display:none;
 }
 
-.home .searchresult h2 {
+.home .searchresult h2 
+{
      display:none;
 }
 
-.home  .searchresult a {
+.home  .searchresult a 
+{
       display:none;
 }
 
-.home  .searchresult button {
+.home  .searchresult button 
+{
      display:none;
 }
 
-.home  #bellicon {
+.home  #bellicon 
+{
       display:none;
 }
 
-.home  #profileimage {
+.home  #profileimage 
+{
       display:none;
 }
 
-.home  #optionsbar {
+.home  #optionsbar 
+{
        display:none;
 }
 
-.home  #optionsmenu1 {
+.home  #optionsmenu1 
+{
        display:none;
 }
 
-.home  #optionsmenu1 li {
+.home  #optionsmenu1 li 
+{
      display:none;
 }
 
-.home  #optionsmenuactive {
+.home  #optionsmenuactive 
+{
        display:none;
 }
 
-.home  .searchresult p {
+.home  .searchresult p 
+{
        display:none;
 }
 
-.home  .relatedsearches h3 {
+.home  .relatedsearches h3 
+{
       display:none;
 }
 
-.home  .relatedlists ul {
+.home  .relatedlists ul 
+{
       display:none;
 }
 
-.home  .relatedlists {
+.home  .relatedlists 
+{
        display:none;
 }
 
-.home  .relatedlists ul li {
+.home  .relatedlists ul li 
+{
       display:none;
 }
 
-.home  .pagelist {
+.home  .pagelist 
+{
        display:none;
 }
 
-.home  .pagelistprevious::before {
+.home  .pagelistprevious::before 
+{
        display:none;
 }
 
-.home  .pagelistprevious::after {
+.home  .pagelistprevious::after 
+{
        display:none;
 }
 
-.home  .pagelistfirst {
+.home  .pagelistfirst 
+{
        display:none;
 }
 
-.home  .pagelistnumber::before, .pagelistfirst::before {
+.home  .pagelistnumber::before, .pagelistfirst::before 
+{
        display:none;
 }
 
-.home  .pagelistnumber::after {
+.home  .pagelistnumber::after 
+{
       display:none;
 }
 
-.home  .pagelistfirst::after {
+.home  .pagelistfirst::after 
+{
        display:none;
 }
 
-.home  .pagelist li {
+.home  .pagelist li 
+{
        display:none;
 }
 
-.home  .pagelistnext {
+.home  .pagelistnext 
+{
        display:none;
 }
 
-.home  .pagelistnext::before {
+.home  .pagelistnext::before 
+{
        display:none;
 }
 
-.home .pagelistnext::after {
+.home .pagelistnext::after 
+{
        display:none;
 }
 
 
-.home  #footer {
+.home  #footer 
+{
      display:none;
 }
-.home  #footermenu {
+.home  #footermenu 
+{
       display:none;
 }
 
-.home #footermenu li {
+.home #footermenu li 
+{
       display:none;
 }
 
-.home #footerlocation {
+.home #footerlocation 
+{
       display:none;
 }
 
-.home #footerlocation p:nth-of-type(1) {
+.home #footerlocation p:nth-of-type(1) 
+{
       display:none;
 }
  
-.home .blue {
+.home .blue 
+{
     display:none;
 }
 
-.home .red {
+.home .red 
+{
      display:none;
 }
 
-.home .green {
+.home .green 
+{
      display:none;
 }
 
-.home .yellow {
+.home .yellow 
+{
      display:none;
 }
 
-.home table {
+.home table 
+{
      display:none;
 }
 
-.home .pageNumber {
+.home .pageNumber 
+{
    display:none;
 }
 .home #granica
