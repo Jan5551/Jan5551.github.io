@@ -140,15 +140,14 @@ position:absolute;
 
 .home .okienko_wyszukiwania
 {
-      border-radius: 25px;
-    border: 1px solid #f8f9fa;
-      border-color: ;
-      padding: 2px;
-
-      height:35px;
-     background-color: #f8f9fa;
+        border-radius: 25px;
+        border: 1px solid #f8f9fa;
+        border-color: ;
+        padding: 2px;
+	height:35px;
+        background-color: #f8f9fa;
 	color: #3c4043;
-width: 580px;
+        width: 580px;
 	margin: 0px auto;
 	position: relative;
 	margin-top: -8px;
@@ -161,19 +160,18 @@ width: 580px;
 {
     background: #1a73e8;
     border: 1px solid transparent;
-
     height:40px;   
     border-radius: 3px;
     margin-right: 90px;
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 
 .home .czcionka
 {
      font-family: 'Roboto', sans-serif;
-    font-size:16px ;
-      text-align: center;
+     font-size:16px ;
+     text-align: center;
 }
 
 
@@ -211,7 +209,7 @@ width: 580px;
 
 
 
-.home footerA ul a:hover {
+.home .footerA ul a:hover {
   text-decoration: underline;
 }
 
