@@ -207,6 +207,129 @@ position:absolute;
 
 
 
+  .home .searcharea {
+    width: 584px;
+    height: 44px;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-top: 27px;
+    z-index:3;
+  
+  }
+  
+  .home .searchbox {
+    padding: 2px 4px;
+    height: 40px;
+    width: 576px;
+  }
+  
+  .home .searcharea:hover {
+    box-shadow: 0 0 8px rgb(223,225,229);
+  }
+  
+  .home .searcharea:active {
+    box-shadow: 0 0 8px rgb(223,225,229);
+  }
+  
+  .home .wejscie{
+    width: 450px;
+    height: 39px;
+    margin-top: 14px;
+    border: 1px green;
+    outline: none;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    bottom: 15px;
+    left: 8px;
+    color: rgba(0,0,0,.87);
+  }
+  
+  
+  .home .searchinput:focus {
+    outline: none;
+  }
+  
+  .home .micro {
+    height: 44px;
+    width: 40px;
+    display: inline-block;
+    float: right;
+  }
+  
+  
+  .home .mic {
+    height: 24px;
+    width: 24px;
+    padding: 8px 8px;
+    display: inline-block;
+  }
+  
+  .home .lupa {
+    height: 44px;
+    width: 40px;
+    display:inline;
+    float: left;
+  }
+  
+  
+  .home .lupka {
+    height: 24px;
+    width: 24px;
+    padding: 8px 8px;
+    display: inline-block;
+  }
+  
+  .home .klawiatura {
+    height: 44px;
+    width: 40px;
+    display:inline;
+    float: right;
+  }
+  
+  
+  .home .keyboard {
+    height: 12px;
+    width: 20px;
+    padding: 14px 8px;
+    display: inline-block;
+  }
+  
+  .home .mic:hover {
+    cursor: pointer;
+  }
+  
+  .home .lupa:hover {
+    cursor: pointer;
+  }
+  
+  .home .klawiatura:hover {
+    cursor: pointer;
+  }
+  
+  .home .search {
+    height: 36px;
+    line-height: 27px;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    color: #3c4043;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  
+  .home .search:hover {
+    cursor: pointer;
+    border: 1px solid #c6c6c6;
+    color: rgb(133, 133, 133);
+  }
+  
 
 
 .home .footerA ul a:hover 
