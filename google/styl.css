@@ -265,8 +265,9 @@ font-family: 'Roboto', sans-serif;
     display: inline-block;
     position: relative;
     bottom: 15px;
-    left:16px;
-    color: #f8f9fa;
+    left:18px;
+    right:18px;
+  color: #f8f9fa;
    
 }
 
