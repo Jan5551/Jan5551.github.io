@@ -269,6 +269,10 @@ font-family: 'Roboto', sans-serif;
     color: rgba(0,0,0,.87);
   }
 
+  .home .searchinput:focus {
+    outline: none;
+  }
+
 .home .button:hover
 {
   border: 1px solid #c8c8c8;
