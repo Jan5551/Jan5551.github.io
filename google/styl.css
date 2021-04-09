@@ -266,8 +266,8 @@ font-family: 'Roboto', sans-serif;
     position: relative;
     bottom: 15px;
     left:16px;
-    color: rgba(0,0,0,.87);
-   outline: none;
+    color: #f8f9fa;
+   
 }
 
   .home .searchinput:focus {
