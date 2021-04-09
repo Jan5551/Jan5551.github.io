@@ -257,7 +257,7 @@ font-family: 'Roboto', sans-serif;
 
  .home .wejscie{
     width: 450px;
-    height: 39px;
+    height: 30px;
     margin-top: 14px;
     border: 1px green;
     outline: none;
@@ -267,7 +267,8 @@ font-family: 'Roboto', sans-serif;
     bottom: 15px;
     left: 8px;
     color: rgba(0,0,0,.87);
-  }
+   outline: none;
+}
 
   .home .searchinput:focus {
     outline: none;
