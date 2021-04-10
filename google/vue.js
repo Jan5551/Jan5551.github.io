@@ -11,6 +11,5 @@ function updateValue(e)
     }
     else
     {
-        myBody.classList.remove('results');
     }
 }
