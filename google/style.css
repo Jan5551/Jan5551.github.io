@@ -454,3 +454,93 @@
 
 }
 
+
+   .results .center
+{
+    display:none;
+}
+
+.results .okienko_wyszukiwania
+{
+    display:none;
+}
+
+.results .ikona
+{
+    display:none;
+}
+    
+    .results .ikony
+{
+    display:none;
+}
+    
+.results .logowanie
+{
+    display:none;
+}
+    
+  .results .buttons
+{
+    display:none;
+}
+    
+    .results .links
+{
+    display:none;
+}    
+    
+    
+    .results .link_1
+{
+    display:none;
+}    
+
+    .results .link_2
+{
+    display:none;
+}    
+
+    .results .link_3
+{
+    display:none;
+}    
+
+ 
+.results .footerA
+{
+
+
+ display:none;
+
+}
+
+.results .footerA .Polska
+{
+
+
+ display:none;
+
+}
+
+.results .czcionka
+{
+ display:none;
+
+}
+
+
+.results .ukryj
+{
+display: none;
+
+
+}
+
+
+ .results img#hide
+{
+
+display: none;
+
+}
