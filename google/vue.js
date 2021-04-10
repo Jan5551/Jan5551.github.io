@@ -7,8 +7,8 @@ function updateValue(e)
 {
     if(e.target.value != '')
     {
-        button.addEventListener('click', (e) => {
-  e.preventDefault();
+        button.addEventListener('click', (f) => {
+ f.preventDefault();
         Body.classList.toggle('results');
         }}
     else
