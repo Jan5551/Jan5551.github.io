@@ -256,16 +256,16 @@ font-family: 'Roboto', sans-serif;
 }
 
  .home .wejscie{
-    width: 400px;
+    width: 420px;
     height: 27px;
-    margin-top: 11px;
+    margin-top: 8px;
     border: 1px green;
     outline: none;
     font-size: 16px;
     display: inline-block;
     position: relative;
     bottom: 15px;
-    left:14px;
+    left:11px;
     right:14px;
   color: #3c4043;
    background-color: transparent 
