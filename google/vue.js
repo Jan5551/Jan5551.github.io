@@ -7,7 +7,7 @@ function updateValue(e)
 {
     if(e.target.value != '')
     {
-        myBody.classList.toggle('results');
+        myBody.classList.add('results');
     }
     else
     {
