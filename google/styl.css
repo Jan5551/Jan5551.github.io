@@ -43,7 +43,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     color:white;
-    display: inline-block;
+    
 }
 
 
@@ -61,7 +61,7 @@
     justify-content: flex-end;
     margin-right: 30px;
     margin-top: 14px;
-    display: inline-block;
+ 
 }
 
 
@@ -100,7 +100,7 @@
     border-radius: 4px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    display: inline-block;
+  
 	color:white;
 }
 .home footerA 
@@ -109,7 +109,7 @@ background: #f2f2f2;
 position:absolute;
    bottom:0;
    width:100%;
-    display: inline-block;
+
 }
 
 .home footerA Polska
@@ -171,7 +171,7 @@ position:absolute;
     border-radius: 3px;
     margin-right: 90px;
     font-family: 'Roboto', sans-serif;
-    display: inline-block;
+
 }
 
 .home .czcionka
@@ -189,7 +189,7 @@ position:absolute;
     margin-left: 2px;
     margin-right: 6px;
     margin-top:0.3px;
-    display: inline-block;
+  
     }
 
 .home .ikona
@@ -198,7 +198,7 @@ position:absolute;
     margin-left: 8px;
     margin-right: 2px;
     margin-top:7.5px;
-    display: inline-block;
+ 
 }
 
 .home .przyciski
@@ -210,7 +210,7 @@ position:absolute;
   font-size: 24px ;
     height: 40px;
 	align-content: start;
-    display: inline-block;
+
 }
 
 
@@ -239,7 +239,7 @@ font-family: 'Roboto', sans-serif;
     border-bottom: 1px solid #dadce0;
     font-size: 15px;
     color: rgba(0,0,0,.54);
-    display: inline-block;
+ 
 }
 
 
@@ -327,7 +327,7 @@ font-family: 'Roboto', sans-serif;
 	justify-content: flex-start;
     min-width: 40%;
     order: 1;
-    display: inline-block;
+  
 }
 
 
@@ -337,7 +337,7 @@ font-family: 'Roboto', sans-serif;
 	padding-left: 18.7px;
 	order: 2;
 	flex: 1;
-    display: inline-block;
+  
 }
 
 
@@ -345,7 +345,7 @@ font-family: 'Roboto', sans-serif;
 {
 	height: 15px;
 	padding-right: 5px;
-    display: inline-block;
+    
 }
 
 .home .link_3 
@@ -353,14 +353,14 @@ font-family: 'Roboto', sans-serif;
 	padding-right: 18.7px;
 	order: 3;
 	justify-content: flex-end;
-    display: inline-block;
+  
 }
 
 .home .Pb9hCb 
 {
     height: 11px;
     margin-right: 6px;
-    display: inline-block;
+   
 }
 
 .home zakrycie
