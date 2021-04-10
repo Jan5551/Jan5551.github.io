@@ -1,17 +1,6 @@
-var Body = document.getElementsByTagName('body')[0];
-
-const input = document.querySelector('input');
-input.addEventListener('change', updateValue);
+const body = document.querySelector('body');
 const button = document.querySelector('button');
-function updateValue(e)
-{
-    if(e.target.value != '')
-    {
-        button.addEventListener('click', (f) => {
- f.preventDefault();
-        Body.classList.toggle('results');
-        }}
-    else
-    {
-    }
-}
+button.addEventListener('click', (e) => {
+  e.preventDefault();
+  body.classList.toggle('results')
+});
