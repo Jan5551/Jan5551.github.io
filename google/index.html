@@ -7,14 +7,14 @@
 
 <link rel="stylesheet" href="styl.css">
 <link rel="stylesheet" href="style.css"/>
-<script src="vue.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script src="./cities.js"></script>
 
-</head>
+   </head>
 
 
-<body class="home">   <!--results-wyniki wyszukiwania, home-strona główna-->
-
+<body>  
+  <div id="app" :class="[googleSearch.length > 0 ? 'results' : 'home']"> 
 <!--Logo-->
 
    <img id="hide" src="https://www.google.pl/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" class="a"  style="position:relative;">
@@ -136,7 +136,20 @@ width=14px;>
   
     <div id="searchresultsarea">
         <p id="searchresultsnumber">Około 155,000 wyników (0.56 sekund) </p>
-        <div class="searchresult">
+        
+       
+        <div class="cities">
+          <a class="link">Lista miast:</a>
+          <ul>
+            <li v-for="city in filteredCities">
+              {{ city.name }}
+            </li>
+          </ul>
+        </div>
+       
+       
+       
+       <div class="searchresult">
             <h2>Znany gagnster Janusz T. brutalnie aresztowany</h2>
             <a>https://www.tvp.info/Janusz_T._zatrzymany </a> <button>▼</button>
             <p>W środowy wieczór, w swoim domu Tulczynie, po trzygodzinnym oblężeniu, CBŚP zatrzymało Janusza T. <br>
@@ -276,6 +289,44 @@ width=14px;>
 </div>
   </div>
     </body>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      googleSearch: '',
+      cities: window.cities,
+    },
+
+    computed: {
+      filteredCities: function() {
+        let result = this.cities.filter(city => city.name.includes(this.googleSearch));
+        if(result.length>10){
+          return result.slice(1,11);
+        }
+        return result;
+      }
+    },
+
+    updated() {
+        this.$nextTick(() => {
+
+        if (this.googleSearch.length > 0) {
+
+        this.$refs.second.focus();
+
+        } else {
+
+        this.$refs.first.focus();
+
+        }
+      })
+    }
+});
+</script>
+
+
+
 </html>
 
 
