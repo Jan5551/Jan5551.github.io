@@ -320,9 +320,11 @@ padding-left: 18.7px;
 
 
 .home .info_3 {
+	display: flex;
 	padding-right: 18.7px;
 	order: 3;
 	justify-content: flex-end;
+
 }
 
 .home .topbar {
