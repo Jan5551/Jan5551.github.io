@@ -32,6 +32,7 @@ div.home  {
 .home .google
 {
     max-height: 92px;
+    max-width: 272px;
 }
 
 .home .wyszukaj
