@@ -297,7 +297,7 @@ div.home  {
 }
 
 .home .info_1 {
-	padding-left: 18.7px;
+padding-left: 18.7px;
 	flex: 1;
 	justify-content: flex-start;
     min-width: 40%;
@@ -306,7 +306,7 @@ div.home  {
 
 .home .info_2 
 {
-padding-left: 15.7px;
+padding-left: 18.7px;
 	order: 2;
 	flex: 1;
 }
