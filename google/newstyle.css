@@ -304,6 +304,19 @@ div.home  {
     order: 1;
 }
 
+.home .info_2 
+{
+text-align:center;
+}
+
+.home .lisc
+{
+ height: 11px;
+ margin-right: 6px;
+
+}
+
+
 .home .info_3 {
 	padding-right: 18.7px;
 	order: 3;
