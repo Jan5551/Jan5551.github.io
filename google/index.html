@@ -23,7 +23,7 @@
 
 <div class="center"><div class="okienko_wyszukiwania" style="position:relative;"><div class="ikona">  <img src="https://icon-library.com/images/google-search-icon/google-search-icon-14.jpg" align="left" height=15px><div class="ikony">       
   <div class="lista">
-     <input ref="first" class="wejscie" v-model="googleSearch" type="text" title="Szukaj">             
+    <input v-model="googleSearch" @keyup.enter="potwierdz" type="search">           
      <ul v-for="miasto in filtredCities" @click="uzupelnij(miasto)">
                       <img class="lupa1" src="lupa.png" title="Szukaj">
                       {{googleSearch}}<b>{{ miasto.name.substring(googleSearch.length) }}</b>
