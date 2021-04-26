@@ -213,7 +213,36 @@ position:absolute;
 
 }
 
+.home img.lupa1
+{
+    margin-top: 3px;
+	padding-left: 22px;
+	padding-top: 9px;
+    height: 23px;
+    cursor: pointer;
+}
 
+.home input
+{
+    background-color: transparent;
+    margin-top: 5px;
+	margin-left: 5px;
+    border: none;
+    padding-right: 0;
+    padding-bottom: 10px;
+    color: rgba(0,0,0,.87);
+    word-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex: 100%;
+    height: 34px;
+	width: 280px;
+    font-size: 18px;
+    font-family: arial,sans-serif;
+    -webkit-appearance: textfield;
+    font-weight: 400;
+    text-align: start;
+}
 
 
 .home .footerA ul a:hover 
