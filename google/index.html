@@ -21,7 +21,12 @@
 
 <!--Lupa i Klawiatura w okienku wyszukiwania-->
 
-<div class="center"><div class="okienko_wyszukiwania" style="position:relative;"><div class="ikona">  <img src="https://icon-library.com/images/google-search-icon/google-search-icon-14.jpg" align="left" height=15px><div class="ikony"><input ref="first" class="wejscie" v-model="googleSearch" type="text" title="Szukaj"> <img src="http://bizweb.dktcdn.net/100/093/811/themes/116804/assets/main_menu_icon_1.png?1605862991921" align="right"  height=17px></div></div></div></div>
+<div class="center"><div class="okienko_wyszukiwania" style="position:relative;"><div class="ikona">  <img src="https://icon-library.com/images/google-search-icon/google-search-icon-14.jpg" align="left" height=15px><div class="ikony">       <div class="lista">
+                  <ul v-for="miasto in filtredCities" @click="uzupelnij(miasto)">
+                      <img class="lupa1" src="lupa.png" title="Szukaj">
+                      {{googleSearch}}<b>{{ miasto.name.substring(googleSearch.length) }}</b>
+                  </ul>
+              </div> <img src="http://bizweb.dktcdn.net/100/093/811/themes/116804/assets/main_menu_icon_1.png?1605862991921" align="right"  height=17px></div></div></div></div>
 
 
    <!--Zaloguj się-->
@@ -138,14 +143,7 @@ width=14px;>
         <p id="searchresultsnumber">Około 155,000 wyników (0.56 sekund) </p>
         
        
-        <div class="cities">
-           <a class="link"><b>Lista miast:</b></a>
-          <ul>
-            <li v-for="city in filteredCities">
-              {{ city.name }}
-            </li>
-          </ul>
-        </div>
+   
        
        
        
@@ -291,38 +289,31 @@ width=14px;>
     </body>
 
 <script>
-  var app = new Vue({
-    el: '#app',
-    data: {
-      googleSearch: '',
-      cities: window.cities,
-    },
-
-    computed: {
-      filteredCities: function() {
-        let result = this.cities.filter(city => city.name.includes(this.googleSearch));
-        if(result.length>10){
-          return result.slice(1,11);
-        }
-        return result;
-      }
-    },
-
-    updated() {
-        this.$nextTick(() => {
-
-        if (this.googleSearch.length > 0) {
-
-        this.$refs.second.focus();
-
-        } else {
-
-        this.$refs.first.focus();
-
-        }
-      })
-    }
-});
+   var app = new Vue({
+                el: "#app",
+                data: {
+                    googleSearch:"",
+                    wyszukaj:"",
+                    cities: window.cities,
+                },
+                computed: {
+                    filtredCities() {
+                        let result = this.cities.filter(miasto => miasto.name.startsWith(this.googleSearch) || miasto.name.toLowerCase().startsWith(this.googleSearch));
+                        if (this.googleSearch.length > 0) {
+                            return result.slice(0, 10);
+                        }
+                    }
+                },
+                methods: {
+                    potwierdz() {
+                        this.wyszukaj = this.googleSearch
+                    },
+                    uzupelnij(miasto) {
+                        this.googleSearch = miasto.name;
+                        this.wyszukaj = this.googleSearch;
+                    },
+                }
+            })
 </script>
 
 
