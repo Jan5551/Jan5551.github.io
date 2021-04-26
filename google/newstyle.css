@@ -306,7 +306,9 @@ div.home  {
 
 .home .info_2 
 {
-text-align:center;
+padding-left: 18.7px;
+	order: 2;
+	flex: 1;
 }
 
 .home .lisc
