@@ -408,10 +408,8 @@ body .results{
 .results .widok {
     display: block;
 
-    .results  .srodek {
+    .results  .hidden {
      display: none;
     }
     
-       .results  .srodek .lisc {
-     display: none;
-    }
+   
