@@ -11,280 +11,521 @@
     <script src="./cities.js"></script>
   </head>
 
-  <body> 
-    <div id="app" :class="[wyszukaj.length > 0 ? 'results' : 'home']"> 
-      
-    <nav class="nav_tools">
-        <a href ="#">Gmail</a>
-        <a href ="#">Grafika</a>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAHlBMVEUAAAD////c3NyGhobZ2dl9fX3o6OiCgoL4+Pi3t7cTiY9IAAABp0lEQVR4nO3dy23DQBBEQZpfKf+EHYH30IcGhq4KoLHvPBK4baH9529HuHksNvf0oTGFCYVdChMKuxQmFHYpTCjsUphQ2KUwobBLYUJhl8KEwi6FCYVdChMKuxQmFHYpTCjsUphQ2KUwobBLYUJhl8KEwi6FCYVdChMKu87Fa65w81psnvFL98z5WbzmPrPNe7H5yTb3fVuMvoPC+RTOp3A+hfMpnE/hfArnUzifwvkUzqdwPoXzKZxvOzLX6sbwfaLN57vYvK/wpfFFZ3V7esLNZ7GZ355S778fKkwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7Hp/4Zzf6of/Yhj0f4vF6DsonE/hfArnUzifwvkUzqdwPoXzKZxP4XwK51M4n8L5/sH3LVJzvlGSev/9UGFCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMLIL9IUYVkcF1KJAAAAAElFTkSuQmCC" class="google_apps" role="button" height="32"></img>
-        <button>Zaloguj się</button>
-    </nav>
+  <body class="home">
+    <div id="start" :class="{results : aktywne()}">
 
-    <div class="main">
-    <div class="logo">
-          <img class="google" src="goglogo.png">
-      </div>
-      <div class="wyszukaj">
-          <div class="pasek">
-              <div class="text">
-                  <div class="widok">
-                      <img class="lupa" src="lupa.png" @click="potwierdz" title="Szukaj">
-                      <input v-model="googleSearch" @keyup.enter="potwierdz" type="search">
-                      <img class="klaw" src="klawiatura.png" title="Narzędzia do wprowadzania tekstu">
-                      <img class="mikro" src="mikrofon.png" title="Wyszukiwanie głosowe">
-                  </div>
-              </div>
-              <div class="lista">
-                  <ul v-for="miasto in filtredCities" @click="uzupelnij(miasto)">
-                      <img class="lupa1" src="lupa.png" title="Szukaj">
-                      {{googleSearch}}<b>{{ miasto.name.substring(googleSearch.length) }}</b>
-                  </ul>
-              </div>
-          </div>
-          <div class="przyciski">
-              <div class="buttons">
-                  <button class="przycisk1" @click="potwierdz" type="button">Szukaj w Google</button>
-                  <button class="przycisk2" type="button" onclick="location.href=''">Szczęśliwy traf</button>
-              </div>
-          </div>
-      </div>
-  </div>
+        <header>
 
-    <footer class="foot">
-        <h4>Polska</h4>
-        <div class="info">
-            <div class="info_1">
-                <a href="#">O nas</a>
-                <a href="#">Reklamuj się</a>
-                <a href="#">Dla firm</a>
-                <a href="#">Jak działa wyszukiwarka</a>
-            </div>
-           
-          <div class="info_2">
-          <a href="#"><img src="lisc.png" class="lisc">Neutralność węglowa od 2007</a>
-           </div>
-          
-          <div class="info_3">
-                <a href="#">Prywatność</a>
-                <a href="#">Warunki</a>
-                <a href="#">Ustawienia</a>
-            </div>
-        </div>
-    </footer>
+            <div class="h-flex_container">
 
-    
-    <div class="topbar">
-
-        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="">
-
-        <ul class="accountOptions">
-          <li><a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAHlBMVEUAAAD////c3NyGhobZ2dl9fX3o6OiCgoL4+Pi3t7cTiY9IAAABp0lEQVR4nO3dy23DQBBEQZpfKf+EHYH30IcGhq4KoLHvPBK4baH9529HuHksNvf0oTGFCYVdChMKuxQmFHYpTCjsUphQ2KUwobBLYUJhl8KEwi6FCYVdChMKuxQmFHYpTCjsUphQ2KUwobBLYUJhl8KEwi6FCYVdChMKu87Fa65w81psnvFL98z5WbzmPrPNe7H5yTb3fVuMvoPC+RTOp3A+hfMpnE/hfArnUzifwvkUzqdwPoXzKZxvOzLX6sbwfaLN57vYvK/wpfFFZ3V7esLNZ7GZ355S778fKkwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7Hp/4Zzf6of/Yhj0f4vF6DsonE/hfArnUzifwvkUzqdwPoXzKZxP4XwK51M4n8L5/sH3LVJzvlGSev/9UGFCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMLIL9IUYVkcF1KJAAAAAElFTkSuQmCC" class="google_apps" role="button" height="32"></a></li>
-          <li><button class="signIn" type="button" name="button">Zaloguj się</button></li>
-        </ul>
-
-        <div class="searchgoogle">
-
-          <div class="elements">
-            <input ref="second" type="text" v-model="googleSearch">
-            <img src="lupa_niebieska.png" class="lupa">
-            <img src="mikrofon.png" class="mikrofon">
-            <img src="klawiatura.png" class="klawiatura">
-            <div class="line"></div>
-            <img src="X.png" class="iks">
-          </div>
-
-          <ul class="optionsbar">
-            <li class="lewo all"><a href="#">Wszystko</a></li>
-            <li class="lewo"><a href="#">Wiadomości</a></li>
-            <li class="lewo"><a href="#">Grafika</a></li>
-            <li class="lewo"><a href="#">Wideo</a></li>
-            <li class="lewo"><a href="#">Mapy</a></li>
-            <li class="lewo"><a href="#">Więcej</a></li>
-            <li class="lewo"><a class="tools" href="#">Narzędzia</a></li>
-            <li class="lewo"><a href="#">Ustawienia</a></li>
-          </ul>
-          
-        </div>
-
-    </div> 
-    <div class="searchResults">
-
-        <p class="searchnumber">Około 155,000 wyników (0.56 sekund)</p>
-
-        <div class="result">
-          <a class="link" href="#">https://www.tvp.info/Janusz_T._zatrzymany</a><button>▼</button>
-          <h2><a href="#">Znany gagnster Janusz T. brutalnie aresztowany</a></h2>
-          <p>W środowy wieczór, w swoim domu Tulczynie, po trzygodzinnym oblężeniu, CBŚP zatrzymało Janusza T. 
-               jednego z najniebezpieczniejszych przestępców w naszym kraju...</p>
-        </div>
-
-        <div class="result">
-          <a class="link" href="#">https://www.onet.pl/Celebryci/Pudzianowski_atakuje</a><button>▼</button>
-          <h2><a href="#">Mariusz Pudzianowski do Janusza Tracza: "Dawaj na ring"</a></h2>
-          <p>Nie milkną echa po kontrowersyjnej wypowiedzi Mariusza Pudzianowskiego, który w poniedziałek publicznie oskrażył Janusza Tracza o ...</p>
-        </div>
-
-        <div class="result">
-          <a class="link" href="#">https://www.pudelek.pl/Masa_ostro </a><button>▼</button>
-          <h2><a href="#">"Masa" ostro o Januszu Traczu: "To hultaj i nicpoń"</a></h2> 
-          <p>"Widziałem go tylko dwa razy w życiu, ale wiem, że to bezwzględny typ..." - tak "Masa" rozpoczyna swoją bajkę o Januszu Traczu. Naczelny polski celebryta...</p>
-        </div>
-
-        <div class="result">
-          <a class="link" href="#">https://www.alfabetmafii.com/Polska/Janusz_Tracz</a><button>▼</button>
-          <h2><a href="#">Kim jest Janusz Tracz?- pytania i odpowiedzi</a></h2> 
-          <p>Rosnąca popularność Janusza Tracza nie może nikogo dziwić. Jego niesamowita charyzma w połączeniu z brutalnością w działaniu powoduje, iż jest on najbardziej poszukiwanym gangsterem w naszym kraju...</p>
-        </div>
-
-        <div class="result">
-          <a class="link" href="#">https://www.wykop.pl/tag/tracz/</a><button>▼</button>
-          <h2><a href="#">Tracz - najlepsze znaleziska i wpisy o #tracz w Wykop.pl</a></h2>
-          <p>Jedna z lepszych zagrywek Pana Janusza. Polecam ogólnie ten kanał na YT, bo można obejrzeć sobie serial Janusz Tracz zamiast Plebanii... i ten serial jest ....</p>
-        </div>
-
-        <div class="result">
-          <a class="link" href="#">https://nonsa.pl/wiki/Janusz_Tracz</a><button>▼</button>
-          <h2><a href="#">Janusz Tracz – Nonsensopedia, polska encyklopedia humoru</a></h2>
-          <p><span>Nie odmawia się, kiedy pieniądz woła. Drugie życiowe motto Tracza. Janusz Tracz- bluźnierca, co rywalom łamie karki, a kobietom serca...</p>
-        </div>
-
-        <div class="result">
-          <a class="link" href="#">https://www.facebook.com/Janusz-Tracz-131170133616427/</a> <button>▼</button>
-          <h2><a href="#">Janusz Tracz - Posts | Facebook</a></h2>
-          <p>Janusz Tracz, Hrubielów. 28018 likes · 16 talking about this. Witam, jestem Janusz Tracz i chcę zawładnąć całym światem...</p>
-      </div>
-
-      <div class="result">
-          <a class="link" href="#">https://www.polityka.pl/tygodnikpolityka/ludzieistyle/1679414,1,niezwykla-kariera-janusza-tracza.read/ </a> <button>▼</button>
-          <h2><a href="#">Niezwykła kariera Janusza Tracza - Polityka.pl</a></h2>
-          <p>18 paź 2016 — Czy zatem władze TVP nie powinny tego apelu wysłuchać? W końcu – jak by powiedział Janusz Tracz – „Nie odmawia się, kiedy pieniądz woła”...
-          </p>
-      </div>
-
-      <div class="result">
-          <a class="link" href="#">https://pl.pinterest.com/janusz_tracz/</a> <button>▼</button>
-          <h2><a href="#">Janusz Tracz (janusz_tracz) — profil | Pinterest</a></h2>
-          <p>Zobacz, co Janusz Tracz (janusz_tracz) odkrył(a) na Pintereście — największej na świecie kolekcji pomysłów.</p>
-      </div>
-
-      <div class="result">
-          <a class="link" href="#">https://www.radiozet.pl/seriale</a> <button>▼</button>
-          <h2><a href="#">Janusz Tracz powraca. Jak dziś wygląda Dariusz Kowalski... </a></h2>
-          <p>Mowa o roli w serialu „Plebania”, gdzie zagrał słynną postać Janusza Tracza. Jak dziś wygląda Dariusz Kowalski ...
-          </p>
-      </div>
-
-        <br>
-
-        <div class="help">
-
-          <h3>Podobne wyszukiwania</h3>
-            <div class="helplists">
-                <ul class="helpleft">
-                    <a id="helpbar1" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Gdzie mieszka Janusz Tracz</a>
-                    <a id="helpbar2" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz zdjęcia</a>
-                    <a id="helpbar3" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz plebania</a>
-                    <a id="helpbar4" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz żona</a>
-                </ul>
-                <ul class="helpright">
-                    <a id="helpbar5" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz rodzina</a>
-                    <a id="helpbar6" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz cytaty</a>
-                    <a id="helpbar7" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz memy</a>
-                    <a id="helpbar8" type="text"><img src="lupa1.webp" class="lupka" alt="Lupa Google" href="#">Janusz Tracz vs Pudzianowski</a>
-                </ul>
+                <section class="h-flex_element linki">
+                    <a class="aplikacje">Gmail</a>
+                    <a class="aplikacje">Grafika</a>
+                </section>
+                <div class=" gorny_pasek">
+                <section class="m-flex_element pasek-flex">
+                    <div class="modul">
+                        <input class="input_wyszukiwanie" ref="top" v-model="googleSearch" maxlength="2048" @focus="skupienie = true" @keyup.down="dol()" @keyup.up="gora()" @keyup.enter="enter()"/>                       
+                            <div class="krzyzyk">
+                            <img title="Wyczyść" class="ikona_input-clear" src="Obrazki/iks.svg"/>
+                            <span class="kreska"></span>
+                            </div>
+                        <img class="ikona_input-keyboard" src="Obrazki/klawiatura.svg"/>
+                        <img class="ikona_input-mikrofon" src="Obrazki/mikrofon.png"/>
+                        <button id="przycisk_szukaj"><img class="ikona_input" src="Obrazki/lupa_2.svg"/></button>
+                    </div>
+                    <div  id="wypisz_miasta" class="miasta_lista" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" >
+                        <ul >
+                            <li  v-for="(miasto,index) in filtrowaneMiasta" >
+                                <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
+                                    <img class="ikona_input" src="Obrazki/lupa.svg" />
+                                    <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>  
+                                </div>
+                            </li>
+                        </ul>
+                    </div> 
+                </section>
             </div>
 
-        </div>
+                <section class="h-flex_element aplikacja">
+                    <a class="aplikacja"><img class="aplikacja" src="Obrazki/aplikacje.svg" /></a>
+                    <a class="pczycisk_login">Zaloguj się</a>
+                </section>
+            </div>
 
-        <br><br>
+            <div class="nawigacja">
+                <section class="odnosnik wszystko">Wszystko</section>
+                <section class="odnosnik">Grafika</section>
+                <section class="odnosnik">Mapy</section>
+                <section class="odnosnik">Wiadomości</section>
+                <section class="odnosnik">Wideo</section>
+                <section class="odnosnik">Więcej</section>
+                <section class="odnosnik">Ustawienia</section>
+                <section class="odnosnik">Narzędzia</section>
 
-          <table class="googlelist">
-            <tr>
-              <td><span class="blue">G</span></td>
-              <td><span class="red">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="yellow">o</span></td>
-              <td><span class="blue">g</span></td>
-              <td><span class="green">l</span></td>
-              <td><span class="red">e</span></td>
-              <td rowspan="2" style="width: 10px;"></td>
-              <td><span class="blue arrow">></span></td>
-            </tr>
+            </div>
+        </header>
 
-            <tr>
-              <td class="numer"></td>
-              <td class="numer">1</td>
-              <td class="numer">2</td>
-              <td class="numer">3</td>
-              <td class="numer">4</td>
-              <td class="numer">5</td>
-              <td class="numer">6</td>
-              <td class="numer">7</td>
-              <td class="numer">8</td>
-              <td class="numer">9</td>
-              <td class="numer">10</td>
-              <td colspan="3"></td>
-              <td class="numer">Następna</td>
-            </tr>
+        <main>
 
-          </table>
+            <div class="m-flex_container">
+                
+                <div class="liczba_wynikow">Około 665 000 000 wyników (0,65 s)</div>
+                <section class="m-flex_element"><a id="google_link"><img class="googleLogo" src="Obrazki/logo_google.png" /></a></section>
+                <form class="szukanie">
+                    <section class="m-flex_element pasek-flex glowne" >
+                        <div class="modul">
+                            <img class="ikona_input" src="Obrazki/lupa.svg" />
+                            <input class="input_wyszukiwanie" maxlength="2048" v-model="googleSearch" @focus="skupienie = true" @keyup.enter="enter()" @keyup.down="dol()" @keyup.up="gora()"/>
+                            <img class="ikona_input-clear" src="Obrazki/clear.svg"/>
+                            <img class="ikona_input-keyboard" src="Obrazki/klawiatura.svg"/>
+                            <img class="ikona_input-mikrofon" src="Obrazki/mikrofon.png"/>
+                        </div>
+                        <div  id="listaMiast" class="nazwy_miast" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" >
+                            <ul >
+                                <li  v-for="(miasto,index) in filtrowaneMiasta" >
+                                    <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
+                                        <img class="ikona_input" src="Obrazki/lupa.svg" />
+                                        <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    
 
-      </div>
+                </form>
+                <div class="m-flex_element przyciski" :class="{ukryte : googleSearch.length > 0 && skupienie && filtrowaneMiasta.length>0}">
+                    <input class="przycisk jeden" type="submit" value="Szukaj w Google" />
+                    <input class="przycisk" type="submit" value="Szczęśliwy traf" />
+                </div>
+            </div>
+            <div class="lista">
+                <div class="wyszukiwanie">
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://developer.mozilla.org › docs › What_is_JavaScript</span>
+                                <br />
+                                <h1 class="strona">Co to jest JavaScript? - Naucz się pisać strony internetowe ...</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span><p>Podstawowa znajomość komputera, podstawowa znajomość HTML i CSS. Cel: Zapoznanie z istotą JavaScript, co on robi i jak jest ...</p></span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://developer.mozilla.org › Learn › JavaScript_basics</span>
+                                <br />
+                                <h1 class="strona">Podstawy JavaScript - Naucz się pisać strony internetowe ...</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>js : var myHeading = document.querySelector('h1'); myHeading.textContent = 'Hello world!'; Na koniec upewnij się, że pliki HTML i JavaScript ...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://pl.wikipedia.org › wiki › JavaScript</span>
+                                <br />
+                                <h1 class="strona">JavaScript – Wikipedia, wolna encyklopedia</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>JavaScript, w skrócie JS – skryptowy język programowania, stworzony przez firmę Netscape, najczęściej stosowany na stronach internetowych. Twórcą ...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.w3schools.com › DEF...</span>
+                                <br />
+                                <h1 class="strona">JavaScript Tutorial - W3Schools</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>... and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://vavatech.pl › technologie › jezyki-programowania</span>
+                                <br />
+                                <h1 class="strona">Język programowania – JavaScript - Vavatech.pl - Strefa wiedzy</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>JavaScript jest to skryptowy język programowania wysokiego poziomu. Razem z HTML i CSS JavaScript stanowi podstawowe narzędzie do tworzenia stron ...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://kodilla.com › kurs-javascript</span>
+                                <br />
+                                <h1 class="strona">Kurs JavaScript - online, od podstaw, programowania, nauka ...</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Kurs JavaScript w Kodilli jest elementem realizowanych przez internet bootcampów Web Developer Plus oraz Front-end: React. W tym pierwszym, trwającym 9 ...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.hackreactor.com › blog</span>
+                                <br />
+                                <h1 class="strona">What is JavaScript Used For? | Hack Reactor</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>What is JavaScript? JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web ...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.tutorialspoint.com › jav...</span>
+                                <br />
+                                <h1 class="strona">Javascript Tutorial - Tutorialspoint</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>What is JavaScript? JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web ...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.enable-javascript.com</span>
+                                <br />
+                                <h1 class="strona">How to enable JavaScript in your browser and why</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Instructions on how to enable (activate) JavaScript in web browser and why.</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://reactjs.org</span>
+                                <br />
+                                <h1 class="strona">React – A JavaScript library for building user interfaces</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM. Learn Once, ...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="podobne">
+                    <h3>Podobne wyszukiwania</h3>
+                    
+                    <div class="podobne_container">
+                        <div class="srodek_container">
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript podstawy tutorial</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript recenzja dokładna</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript podstawy tutorial</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript recenzja dokładna</b>
+                            </a>
+                        </div>
 
-      <div class="infopasek">
+                        <div class="srodek_container">
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript podstawy tutorial</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript recenzja dokładna</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript podstawy tutorial</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <b>JavaScript recenzja dokładna</b>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="srodek_container">
+                        <table class="tablica_google">
+                            <tr>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera niebieski">G</div>
+                                        <div class="number"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a class="obecna" href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera czerwony">o</div>
+                                            <div class="cyfra obecna">1</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">2</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">3</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">4</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">5</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">6</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">7</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">8</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">9</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">10</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera niebieski">g</div>
+                                        <div class="cyfra"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera zielony">l</div>
+                                        <div class="cyfra"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera czerwony">e</div>
+                                        <div class="cyfra"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera niebieski strzalka">></div>
+                                            <div class="cyfra">Następna</div>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+        </main>
 
-        <div class="locationpasek">
-        <p>
-          <a class="panstwo">Polska</a>
-          <a class="miasto"><strong>Bielsko-Biała</strong> - Na podstawie Twojej wcześniejszej aktywności </a>
-          <a class ="inne">- Użyj dokładnej lokalizacji</a><a class ="loc_more"> - Dowiedz się więcej</a>
-        </p>
-      </div>
+        <footer class="dol">
+            <div class="dolny_pasek">
+                <div class="panstwo">Polska<span class="lokacja"><span class="kropka"></span><b> 34-300, Żywiec</b> - Z Twojego adresu internetowego - <a href="#">Użyj dokładnej lokalizacji</a> - <a href="#">Dowiedz się więcej</a></span></div>
+            </div>
 
-        <ul>
-            <li><a href="#">Pomoc</a></li>
-            <li><a href="#">Prześlij opinię</a></li>
-            <li><a href="#">Prywatność</a></li>
-            <li><a href="#">Warunki</a></li>
-        </ul>
-        
-      </div>
+            <div class="footer_container">
+                <section class="f_flex_element sekcja pierwsza">
+                    <a class="sekcja-item link odstep">O nas</a>
+                    <a class="sekcja-item link odstep">Reklamuj się</a>
+                    <a class="sekcja-item link odstep">Dla firm</a>
+                    <a class="sekcja-item link odstep">Jak działa wyszukiwania</a>
+                </section>
+                <section class="f_flex_element sekcja druga">
+                    <a class="sekcja-item link">Pomoc</a>
+                    <a class="sekcja-item link">Prywatność</a>
+                    <a class="sekcja-item link">Warunki</a>
+                    </div>
+                </section>
+            </div>
+        </footer>
     </div>
 </body>
 
 <script>
-   var app = new Vue({
-                el: "#app",
-                data: {
-                    googleSearch:"",
-                    wyszukaj:"",
-                    cities: window.cities,
-                },
-                computed: {
-                    filtredCities() {
-                        let result = this.cities.filter(miasto => miasto.name.startsWith(this.googleSearch) || miasto.name.toLowerCase().startsWith(this.googleSearch));
-                        if (this.googleSearch.length > 0) {
-                            return result.slice(0, 10);
-                        }
-                    }
-                },
-                methods: {
-                    potwierdz() {
-                        this.wyszukaj = this.googleSearch
-                    },
-                    uzupelnij(miasto) {
-                        this.googleSearch = miasto.name;
-                        this.wyszukaj = this.googleSearch;
-                    },
+    var app = new Vue(
+        {
+        el: '#start',
+        data: {
+            googleSearch: '',
+            searchedInput:'',
+            filtrowaneMiasta:"",
+            cities: window.cities,
+            filtrowane_miasta_aktualizacja:true,
+            skupienie: false,
+            zmiana: false,
+            zaznaczenie: -1,
+        },
+        updated()
+         {
+            this.$nextTick(() => 
+            {
+                if (this.zmiana)
+                {
+                    this.$refs.top.focus();
                 }
-            })
+                else
+                {
+                    this.$refs.bottom.focus();
+                }
+            });
+        },
+        watch: 
+        {
+            zaznaczenie: function () 
+            {
+            this.filtrowane_miasta_aktualizacja=false;
+            this.googleSearch=this.filtrowaneMiasta[this.zaznaczenie].name;
+            },
+            googleSearch: function()
+            {
+                this.filtrowane_miasta_utworz(this.filtrowane_miasta_aktualizacja);
+                this.filtrowane_miasta_aktualizacja=true;
+                console.log(this.filtrowaneMiasta);
+                if(this.zaznaczenie==-1)
+                {
+                    this.searchedInput=this.googleSearch;      
+                }
+            }
+        },
+        methods:
+        {
+            enter() 
+            {
+                this.filtrowaneMiasta=true;
+                this.zmiana= true;
+                this.zaznaczenie=-1;
+                this.skupienie = false;
+             },
+            dol()
+            {
+                if(this.zaznaczenie<this.filtrowaneMiasta.length-1)
+                {
+                    this.zaznaczenie+=1; 
+                }
+                else if(this.zaznaczenie==this.filtrowaneMiasta.length-1)
+                {
+                    this.zaznaczenie=0; 
+                }
+             },
+             gora()
+             {
+                if(this.zaznaczenie>0)
+                {
+                    this.zaznaczenie-=1; 
+                }
+                else if(this.zaznaczenie==0)
+                {
+                    this.zaznaczenie=this.filtrowaneMiasta.length-1;
+                }
+             },
+             wybrane(i)
+             {
+                this.googleSearch=this.filtrowaneMiasta[i].name;
+                this.enter();
+             },
+             aktywne()
+             {
+                if(this.googleSearch.length==0){
+                    this.zmiana=false;
+                }
+                return this.zmiana;
+             },
+             filtrowane_miasta_utworz(prawda)
+             {
+                 if(prawda)
+                 {
+                    let result=this.cities.filter(miasto => miasto.name.includes(this.googleSearch));
+                    if(result.length>10)
+                    {
+                        this.filtrowaneMiasta= result.slice(1, 11);
+                    }
+                    else{
+                        this.filtrowaneMiasta= result;
+                    }
+                    this.zaznaczenie=-1;
+                 }   
+             },
+             wytluszcz(miasto)
+            {
+                let re = new RegExp(this.searchedInput,"gi");
+                let bolden="<b>"+miasto.name.replace(re, match=>
+                    {
+                     return "<span class='zwykly'>"+ match+"</span>";
+                    })+"</b>";
+                console.log(bolden);
+                return bolden;
+            }      
+        }
+    })
 </script>
 </html>
