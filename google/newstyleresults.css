@@ -407,12 +407,14 @@ body .results{
 }
 .results .widok {
     display: block;
-
-    .results .srodek {
+}
+.results .srodek 
+    {
      display: none;
     }
     
-      .results .srodek .lisc{
+  .results .srodek .lisc
+    {
      display: none;
     }
     
