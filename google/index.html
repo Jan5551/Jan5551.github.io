@@ -32,7 +32,7 @@
                             </div>
                         <img class="ikona_input-keyboard" src="klawiatura.png"/>
                         <img class="ikona_input-mikrofon" src="mikrofon.png"/>
-                        <button id="przycisk_szukaj"><img class="ikona_input" src="lupa_niebieskia.png"/></button>
+                        <button id="przycisk_szukaj"><img class="ikona_input" src="lupa_niebieska.png"/></button>
                     </div>
                     <div  id="wypisz_miasta" class="miasta_lista" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" >
                         <ul >
@@ -85,7 +85,7 @@
                             <ul >
                                 <li  v-for="(miasto,index) in filtrowaneMiasta" >
                                     <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
-                                        <img class="ikona_input" src="lupa1.webp" />
+                                        <img class="ikona_input" src="lupa.png" />
                                         <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>
                                     </div>
                                 </li>
@@ -232,7 +232,7 @@
                         <div class="srodek_container">
                             <a href="#">
                                 <img class="ikona_input lupa" src="lupa.png" />
-                                <b>>Gdzie mieszka Janusz Tracz</b>
+                                <b>Gdzie mieszka Janusz Tracz</b>
                             </a>
                             <a href="#">
                                 <img class="ikona_input lupa" src="lupa.png" />
