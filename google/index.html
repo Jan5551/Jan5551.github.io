@@ -27,18 +27,18 @@
                     <div class="modul">
                         <input class="input_wyszukiwanie" ref="top" v-model="googleSearch" maxlength="2048" @focus="skupienie = true" @keyup.down="dol()" @keyup.up="gora()" @keyup.enter="enter()"/>                       
                             <div class="krzyzyk">
-                            <img title="Wyczyść" class="ikona_input-clear" src="Obrazki/iks.svg"/>
+                            <img title="Wyczyść" class="ikona_input-clear" src="X.png"/>
                             <span class="kreska"></span>
                             </div>
-                        <img class="ikona_input-keyboard" src="Obrazki/klawiatura.svg"/>
-                        <img class="ikona_input-mikrofon" src="Obrazki/mikrofon.png"/>
-                        <button id="przycisk_szukaj"><img class="ikona_input" src="Obrazki/lupa_2.svg"/></button>
+                        <img class="ikona_input-keyboard" src="klawiatura.png"/>
+                        <img class="ikona_input-mikrofon" src="mikrofon.png"/>
+                        <button id="przycisk_szukaj"><img class="ikona_input" src="lupa.png"/></button>
                     </div>
                     <div  id="wypisz_miasta" class="miasta_lista" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" >
                         <ul >
                             <li  v-for="(miasto,index) in filtrowaneMiasta" >
                                 <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
-                                    <img class="ikona_input" src="Obrazki/lupa.svg" />
+                                    <img class="ikona_input" src="lupa.png" />
                                     <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>  
                                 </div>
                             </li>
@@ -48,7 +48,7 @@
             </div>
 
                 <section class="h-flex_element aplikacja">
-                    <a class="aplikacja"><img class="aplikacja" src="Obrazki/aplikacje.svg" /></a>
+                    <a class="aplikacja"><img class="aplikacja" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAHlBMVEUAAAD////c3NyGhobZ2dl9fX3o6OiCgoL4+Pi3t7cTiY9IAAABp0lEQVR4nO3dy23DQBBEQZpfKf+EHYH30IcGhq4KoLHvPBK4baH9529HuHksNvf0oTGFCYVdChMKuxQmFHYpTCjsUphQ2KUwobBLYUJhl8KEwi6FCYVdChMKuxQmFHYpTCjsUphQ2KUwobBLYUJhl8KEwi6FCYVdChMKu87Fa65w81psnvFL98z5WbzmPrPNe7H5yTb3fVuMvoPC+RTOp3A+hfMpnE/hfArnUzifwvkUzqdwPoXzKZxvOzLX6sbwfaLN57vYvK/wpfFFZ3V7esLNZ7GZ355S778fKkwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7Hp/4Zzf6of/Yhj0f4vF6DsonE/hfArnUzifwvkUzqdwPoXzKZxP4XwK51M4n8L5/sH3LVJzvlGSev/9UGFCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMIuhQmFXQoTCrsUJhR2KUwo7FKYUNilMKGwS2FCYZfChMLIL9IUYVkcF1KJAAAAAElFTkSuQmCC" /></a>
                     <a class="pczycisk_login">Zaloguj się</a>
                 </section>
             </div>
@@ -70,22 +70,22 @@
 
             <div class="m-flex_container">
                 
-                <div class="liczba_wynikow">Około 665 000 000 wyników (0,65 s)</div>
-                <section class="m-flex_element"><a id="google_link"><img class="googleLogo" src="Obrazki/logo_google.png" /></a></section>
+                <div class="liczba_wynikow">Około 155,000 wyników (0.56 sekund)</div>
+                <section class="m-flex_element"><a id="google_link"><img class="googleLogo" src="goglogo.png" /></a></section>
                 <form class="szukanie">
                     <section class="m-flex_element pasek-flex glowne" >
                         <div class="modul">
-                            <img class="ikona_input" src="Obrazki/lupa.svg" />
+                            <img class="ikona_input" src="lupa_niebieska.png" />
                             <input class="input_wyszukiwanie" maxlength="2048" v-model="googleSearch" @focus="skupienie = true" @keyup.enter="enter()" @keyup.down="dol()" @keyup.up="gora()"/>
-                            <img class="ikona_input-clear" src="Obrazki/clear.svg"/>
-                            <img class="ikona_input-keyboard" src="Obrazki/klawiatura.svg"/>
-                            <img class="ikona_input-mikrofon" src="Obrazki/mikrofon.png"/>
+                            <img class="ikona_input-clear" src="X.png"/>
+                            <img class="ikona_input-keyboard" src="klawiatura.png"/>
+                            <img class="ikona_input-mikrofon" src="mikrofon.png"/>
                         </div>
                         <div  id="listaMiast" class="nazwy_miast" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" >
                             <ul >
                                 <li  v-for="(miasto,index) in filtrowaneMiasta" >
                                     <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
-                                        <img class="ikona_input" src="Obrazki/lupa.svg" />
+                                        <img class="ikona_input" src="lupa1.webp" />
                                         <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>
                                     </div>
                                 </li>
@@ -105,121 +105,122 @@
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://developer.mozilla.org › docs › What_is_JavaScript</span>
+                                <span class="sciezka"><span class="ciemny">https://www.tvp.info/Janusz_T._zatrzymany</span>
                                 <br />
-                                <h1 class="strona">Co to jest JavaScript? - Naucz się pisać strony internetowe ...</h1>
+                                <h1 class="strona">Znany gagnster Janusz T. brutalnie aresztowany</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span><p>Podstawowa znajomość komputera, podstawowa znajomość HTML i CSS. Cel: Zapoznanie z istotą JavaScript, co on robi i jak jest ...</p></span>
+                            <span><p>W środowy wieczór, w swoim domu Tulczynie, po trzygodzinnym oblężeniu, CBŚP zatrzymało Janusza T. 
+               jednego z najniebezpieczniejszych przestępców w naszym kraju...</p></span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://developer.mozilla.org › Learn › JavaScript_basics</span>
+                                <span class="sciezka"><span class="ciemny">https://www.onet.pl/Celebryci/Pudzianowski_atakuje</span>
                                 <br />
-                                <h1 class="strona">Podstawy JavaScript - Naucz się pisać strony internetowe ...</h1>
+                                <h1 class="strona">Mariusz Pudzianowski do Janusza Tracza: "Dawaj na ring"</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>js : var myHeading = document.querySelector('h1'); myHeading.textContent = 'Hello world!'; Na koniec upewnij się, że pliki HTML i JavaScript ...</span>
+                            <span>jNie milkną echa po kontrowersyjnej wypowiedzi Mariusza Pudzianowskiego, który w poniedziałek publicznie oskrażył Janusza Tracza o ...</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://pl.wikipedia.org › wiki › JavaScript</span>
+                                <span class="sciezka"><span class="ciemny">https://www.pudelek.pl/Masa_ostro</span>
                                 <br />
-                                <h1 class="strona">JavaScript – Wikipedia, wolna encyklopedia</h1>
+                                <h1 class="strona">"Masa" ostro o Januszu Traczu: "To hultaj i nicpoń"</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>JavaScript, w skrócie JS – skryptowy język programowania, stworzony przez firmę Netscape, najczęściej stosowany na stronach internetowych. Twórcą ...</span>
+                            <span>"Widziałem go tylko dwa razy w życiu, ale wiem, że to bezwzględny typ..." - tak "Masa" rozpoczyna swoją bajkę o Januszu Traczu. Naczelny polski celebryta...</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://www.w3schools.com › DEF...</span>
+                                <span class="sciezka"><span class="ciemny">https://www.alfabetmafii.com/Polska/Janusz_Tracz</span>
                                 <br />
-                                <h1 class="strona">JavaScript Tutorial - W3Schools</h1>
+                                <h1 class="strona">Kim jest Janusz Tracz?- pytania i odpowiedzi</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>... and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</span>
+                            <span>.Rosnąca popularność Janusza Tracza nie może nikogo dziwić. Jego niesamowita charyzma w połączeniu z brutalnością w działaniu powoduje, iż jest on najbardziej poszukiwanym gangsterem w naszym kraju...</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://vavatech.pl › technologie › jezyki-programowania</span>
+                                <span class="sciezka"><span class="ciemny">https://www.wykop.pl/tag/tracz/</span>
                                 <br />
-                                <h1 class="strona">Język programowania – JavaScript - Vavatech.pl - Strefa wiedzy</h1>
+                                <h1 class="strona">Tracz - najlepsze znaleziska i wpisy o #tracz w Wykop.pl</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>JavaScript jest to skryptowy język programowania wysokiego poziomu. Razem z HTML i CSS JavaScript stanowi podstawowe narzędzie do tworzenia stron ...</span>
+                            <span>Jedna z lepszych zagrywek Pana Janusza. Polecam ogólnie ten kanał na YT, bo można obejrzeć sobie serial Janusz Tracz zamiast Plebanii... i ten serial jest ....</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://kodilla.com › kurs-javascript</span>
+                                <span class="sciezka"><span class="ciemny">https://nonsa.pl/wiki/Janusz_Tracz</span>
                                 <br />
-                                <h1 class="strona">Kurs JavaScript - online, od podstaw, programowania, nauka ...</h1>
+                                <h1 class="strona">Janusz Tracz – Nonsensopedia, polska encyklopedia humoru</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>Kurs JavaScript w Kodilli jest elementem realizowanych przez internet bootcampów Web Developer Plus oraz Front-end: React. W tym pierwszym, trwającym 9 ...</span>
+                            <span>Nie odmawia się, kiedy pieniądz woła. Drugie życiowe motto Tracza. Janusz Tracz- bluźnierca, co rywalom łamie karki, a kobietom serca...</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://www.hackreactor.com › blog</span>
+                                <span class="sciezka"><span class="ciemny">https://www.facebook.com/Janusz-Tracz-131170133616427/</span>
                                 <br />
-                                <h1 class="strona">What is JavaScript Used For? | Hack Reactor</h1>
+                                <h1 class="strona">Janusz Tracz - Posts | Facebook</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>What is JavaScript? JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web ...</span>
+                            <span>Janusz Tracz, Hrubielów. 28018 likes · 16 talking about this. Witam, jestem Janusz Tracz i chcę zawładnąć całym światem...</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://www.tutorialspoint.com › jav...</span>
+                                <span class="sciezka"><span class="ciemny">https://www.polityka.pl/tygodnikpolityka/ludzieistyle/1679414,1,niezwykla-kariera-janusza-tracza.read/</span>
                                 <br />
-                                <h1 class="strona">Javascript Tutorial - Tutorialspoint</h1>
+                                <h1 class="strona">Niezwykła kariera Janusza Tracza - Polityka.pl</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>What is JavaScript? JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web ...</span>
+                            <span18 paź 2016 — Czy zatem władze TVP nie powinny tego apelu wysłuchać? W końcu – jak by powiedział Janusz Tracz – „Nie odmawia się, kiedy pieniądz woła”...</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://www.enable-javascript.com</span>
+                                <span class="sciezka"><span class="ciemny">https://pl.pinterest.com/janusz_tracz/</span>
                                 <br />
-                                <h1 class="strona">How to enable JavaScript in your browser and why</h1>
+                                <h1 class="strona">Janusz Tracz (janusz_tracz) — profil | Pinterest</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>Instructions on how to enable (activate) JavaScript in web browser and why.</span>
+                            <span>Zobacz, co Janusz Tracz (janusz_tracz) odkrył(a) na Pintereście — największej na świecie kolekcji pomysłów.</span>
                         </div>
                     </div>
                     <div class="wynik">
                         <a class="hiperlacze">
                             <div>
-                                <span class="sciezka"><span class="ciemny">https://reactjs.org</span>
+                                <span class="sciezka"><span class="ciemny">https://www.radiozet.pl/seriale</span>
                                 <br />
-                                <h1 class="strona">React – A JavaScript library for building user interfaces</h1>
+                                <h1 class="strona">Janusz Tracz powraca. Jak dziś wygląda Dariusz Kowalski...</h1>
                             </div>
                         </a>
                         <div class="opis">
-                            <span>Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM. Learn Once, ...</span>
+                            <span>>Mowa o roli w serialu „Plebania”, gdzie zagrał słynną postać Janusza Tracza. Jak dziś wygląda Dariusz Kowalski ...</span>
                         </div>
                     </div>
                 </div>
@@ -230,38 +231,38 @@
                     <div class="podobne_container">
                         <div class="srodek_container">
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript podstawy tutorial</b>
                             </a>
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript recenzja dokładna</b>
                             </a>
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript podstawy tutorial</b>
                             </a>
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript recenzja dokładna</b>
                             </a>
                         </div>
 
                         <div class="srodek_container">
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript podstawy tutorial</b>
                             </a>
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript recenzja dokładna</b>
                             </a>
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript podstawy tutorial</b>
                             </a>
                             <a href="#">
-                                <img class="ikona_input lupa" src="Obrazki/lupa.svg" />
+                                <img class="ikona_input lupa" src="lupa.png" />
                                 <b>JavaScript recenzja dokładna</b>
                             </a>
                         </div>
@@ -390,7 +391,7 @@
 
         <footer class="dol">
             <div class="dolny_pasek">
-                <div class="panstwo">Polska<span class="lokacja"><span class="kropka"></span><b> 34-300, Żywiec</b> - Z Twojego adresu internetowego - <a href="#">Użyj dokładnej lokalizacji</a> - <a href="#">Dowiedz się więcej</a></span></div>
+                <div class="panstwo">Polska<span class="lokacja"><span class="kropka"></span><b> 43-300, Bielsko-Biała</b> - Z Twojego adresu internetowego - <a href="#">Użyj dokładnej lokalizacji</a> - <a href="#">Dowiedz się więcej</a></span></div>
             </div>
 
             <div class="footer_container">
