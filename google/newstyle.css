@@ -336,6 +336,10 @@ padding-left: 18.7px;
 	order: 2;
 	flex: 1;
 display:inline-flex;
+display: inline;
+text-align: center;
+margin-top: 17px;
+
 }
 
 .home .srodek .lisc
