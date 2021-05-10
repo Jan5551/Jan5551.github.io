@@ -1,22 +1,17 @@
-<!doctype html>
+<<!DOCTYPE html>
 <html lang="pl">
 
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>Strona Google</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="style_results.css">
-    <link rel="stylesheet" type="text/css" href="autocompleter.css">
-    <link rel="shortcut icon" href="Obrazki/logo_tytulowa.svg" />
+    <title>Google</title>
+    <link rel="icon" href="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png">
+    <link rel="stylesheet" type="text/css" href="newstyle.css">
+    <link rel="stylesheet" type="text/css" href="newstyleresults.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./cities.js"></script>
-    <!--<script src="./autocompleter.js"></script>-->
+  </head>
 
-</head>
-
-
-
-<body class="home">
+  <body class="home">
     <div id="start" :class="{results : aktywne()}">
 
         <header>
@@ -29,9 +24,8 @@
                 </section>
                 <div class=" gorny_pasek">
                 <section class="m-flex_element pasek-flex">
-                    <div class="czesc">
-                        
-                        <input class="input_wyszukaj" ref="top" v-model="googleSearch" maxlength="2048" @focus="skupienie = true" @keyup.down="dol()" @keyup.up="gora()" @keyup.enter="enter()"/>                         
+                    <div class="modul">
+                        <input class="input_wyszukiwanie" ref="top" v-model="googleSearch" maxlength="2048" @focus="skupienie = true" @keyup.down="dol()" @keyup.up="gora()" @keyup.enter="enter()"/>                       
                             <div class="krzyzyk">
                             <img title="Wyczyść" class="ikona_input-clear" src="X.png"/>
                             <span class="kreska"></span>
@@ -44,7 +38,7 @@
                         <ul >
                             <li  v-for="(miasto,index) in filtrowaneMiasta" >
                                 <div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}">
-                                    <img class="ikona_input" src="Obrazki/lupa.svg" />
+                                    <img class="ikona_input" src="lupa.png" />
                                     <a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a>  
                                 </div>
                             </li>
@@ -108,132 +102,291 @@
             </div>
             <div class="lista">
                 <div class="wyszukiwanie">
-                    <div class="result">
-                        <a class="link" href="#">>https://www.tvp.info/Janusz_T._zatrzymany</a><button>▼</button>
-                        <h2><a>Znany gagnster Janusz T. brutalnie aresztowany</a></h2>
-                        <p>W środowy wieczór, w swoim domu Tulczynie, po trzygodzinnym oblężeniu, CBŚP zatrzymało Janusza T. 
-               jednego z najniebezpieczniejszych przestępców w naszym kraju...</p>
-                      </div>
-              
-                      <div class="result">
-                        <a class="link" href="#"https://www.onet.pl/Celebryci/Pudzianowski_atakuje</a><button>▼</button>
-                        <h2><a>>Mariusz Pudzianowski do Janusza Tracza: "Dawaj na ring"</a></h2>
-                        <p>Nie milkną echa po kontrowersyjnej wypowiedzi Mariusza Pudzianowskiego, który w poniedziałek publicznie oskrażył Janusza Tracza o ...</p>
-                      </div>
-              
-                      <div class="result">
-                        <a class="link" href="#">https://www.pudelek.pl/Masa_ostro </a><button>▼</button>
-                        <h2><a>"Masa" ostro o Januszu Traczu: "To hultaj i nicpoń"</a></h2> 
-                        <p>Widziałem go tylko dwa razy w życiu, ale wiem, że to bezwzględny typ..." - tak "Masa" rozpoczyna swoją bajkę o Januszu Traczu. Naczelny polski celebryta...</p>
-                      </div>
-              
-                      <div class="result">
-                        <a class="link" href="#">https://www.alfabetmafii.com/Polska/Janusz_Tracz</a><button>▼</button>
-                        <h2><a>Kim jest Janusz Tracz?- pytania i odpowiedzi</a></h2> 
-                        <p>Rosnąca popularność Janusza Tracza nie może nikogo dziwić. Jego niesamowita charyzma w połączeniu z brutalnością w działaniu powoduje, iż jest on najbardziej poszukiwanym gangsterem w naszym kraju...</p>
-                      </div>
-              
-                      <div class="result">
-                        <a class="link" href="#">>https://www.wykop.pl/tag/tracz/ </a><button>▼</button>
-                        <h2><a>Tracz - najlepsze znaleziska i wpisy o #tracz w Wykop.pl</a></h2>
-                        <p>Jedna z lepszych zagrywek Pana Janusza. Polecam ogólnie ten kanał na YT, bo można obejrzeć sobie serial Janusz Tracz zamiast Plebanii... i ten serial jest ....</p>
-                      </div>
-              
-                      <div class="result">
-                        <a class="link" href="#">https://nonsa.pl/wiki/Janusz_Tracz</a><button>▼</button>
-                        <h2><a>Janusz Tracz – Nonsensopedia, polska encyklopedia humoru</a></h2>
-                        <p><span>Nie odmawia się, kiedy pieniądz woła. Drugie życiowe motto Tracza. Janusz Tracz- bluźnierca, co rywalom łamie karki, a kobietom serca...</p>
-                      </div>
-              
-                      <div class="result">
-                        <a class="link" href="#">https://www.facebook.com/Janusz-Tracz-131170133616427/</a> <button>▼</button>
-                        <h2><a>Janusz Tracz - Posts | Facebook</a></h2>
-                        <p>Janusz Tracz, Hrubielów. 28018 likes · 16 talking about this. Witam, jestem Janusz Tracz i chcę zawładnąć całym światem...</p>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.tvp.info/Janusz_T._zatrzymany</span>
+                                <br />
+                                <h1 class="strona">Znany gagnster Janusz T. brutalnie aresztowany</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span><p>W środowy wieczór, w swoim domu Tulczynie, po trzygodzinnym oblężeniu, CBŚP zatrzymało Janusza T. 
+               jednego z najniebezpieczniejszych przestępców w naszym kraju...</p></span>
+                        </div>
                     </div>
-              
-                    <div class="result">
-                        <a class="link" href="#">https://www.polityka.pl/tygodnikpolityka/ludzieistyle/1679414,1,niezwykla-kariera-janusza-tracza.read/ </a> <button>▼</button>
-                        <h2><a>Niezwykła kariera Janusza Tracza - Polityka.pl</a></h2>
-                        <p>J18 paź 2016 — Czy zatem władze TVP nie powinny tego apelu wysłuchać? W końcu – jak by powiedział Janusz Tracz – „Nie odmawia się, kiedy pieniądz woła”...
-                        </p>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.onet.pl/Celebryci/Pudzianowski_atakuje</span>
+                                <br />
+                                <h1 class="strona">Mariusz Pudzianowski do Janusza Tracza: "Dawaj na ring"</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>jNie milkną echa po kontrowersyjnej wypowiedzi Mariusza Pudzianowskiego, który w poniedziałek publicznie oskrażył Janusza Tracza o ...</span>
+                        </div>
                     </div>
-              
-                    <div class="result">
-                        <a class="link" href="#">https://pl.pinterest.com/janusz_tracz/</a> <button>▼</button>
-                        <h2><a>Janusz Tracz (janusz_tracz) — profil | Pinterest</a></h2>
-                        <p>Zobacz, co Janusz Tracz (janusz_tracz) odkrył(a) na Pintereście — największej na świecie kolekcji pomysłów.</p>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.pudelek.pl/Masa_ostro</span>
+                                <br />
+                                <h1 class="strona">"Masa" ostro o Januszu Traczu: "To hultaj i nicpoń"</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>"Widziałem go tylko dwa razy w życiu, ale wiem, że to bezwzględny typ..." - tak "Masa" rozpoczyna swoją bajkę o Januszu Traczu. Naczelny polski celebryta...</span>
+                        </div>
                     </div>
-              
-                    <div class="result">
-                        <a class="link" href="#">https://www.radiozet.pl/seriale</a> <button>▼</button>
-                        <h2><a>Janusz Tracz powraca. Jak dziś wygląda Dariusz Kowalski...</a></h2>
-                        <p>Mowa o roli w serialu „Plebania”, gdzie zagrał słynną postać Janusza Tracza. Jak dziś wygląda Dariusz Kowalski ...
-                        </p>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.alfabetmafii.com/Polska/Janusz_Tracz</span>
+                                <br />
+                                <h1 class="strona">Kim jest Janusz Tracz?- pytania i odpowiedzi</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>.Rosnąca popularność Janusza Tracza nie może nikogo dziwić. Jego niesamowita charyzma w połączeniu z brutalnością w działaniu powoduje, iż jest on najbardziej poszukiwanym gangsterem w naszym kraju...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.wykop.pl/tag/tracz/</span>
+                                <br />
+                                <h1 class="strona">Tracz - najlepsze znaleziska i wpisy o #tracz w Wykop.pl</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Jedna z lepszych zagrywek Pana Janusza. Polecam ogólnie ten kanał na YT, bo można obejrzeć sobie serial Janusz Tracz zamiast Plebanii... i ten serial jest ....</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://nonsa.pl/wiki/Janusz_Tracz</span>
+                                <br />
+                                <h1 class="strona">Janusz Tracz – Nonsensopedia, polska encyklopedia humoru</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Nie odmawia się, kiedy pieniądz woła. Drugie życiowe motto Tracza. Janusz Tracz- bluźnierca, co rywalom łamie karki, a kobietom serca...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.facebook.com/Janusz-Tracz-131170133616427/</span>
+                                <br />
+                                <h1 class="strona">Janusz Tracz - Posts | Facebook</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Janusz Tracz, Hrubielów. 28018 likes · 16 talking about this. Witam, jestem Janusz Tracz i chcę zawładnąć całym światem...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.polityka.pl/tygodnikpolityka/ludzieistyle/1679414,1,niezwykla-kariera-janusza-tracza.read/</span>
+                                <br />
+                                <h1 class="strona">Niezwykła kariera Janusza Tracza - Polityka.pl</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>18 paź 2016 — Czy zatem władze TVP nie powinny tego apelu wysłuchać? W końcu – jak by powiedział Janusz Tracz – „Nie odmawia się, kiedy pieniądz woła”...</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://pl.pinterest.com/janusz_tracz/</span>
+                                <br />
+                                <h1 class="strona">Janusz Tracz (janusz_tracz) — profil | Pinterest</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>Zobacz, co Janusz Tracz (janusz_tracz) odkrył(a) na Pintereście — największej na świecie kolekcji pomysłów.</span>
+                        </div>
+                    </div>
+                    <div class="wynik">
+                        <a class="hiperlacze">
+                            <div>
+                                <span class="sciezka"><span class="ciemny">https://www.radiozet.pl/seriale</span>
+                                <br />
+                                <h1 class="strona">Janusz Tracz powraca. Jak dziś wygląda Dariusz Kowalski...</h1>
+                            </div>
+                        </a>
+                        <div class="opis">
+                            <span>>Mowa o roli w serialu „Plebania”, gdzie zagrał słynną postać Janusza Tracza. Jak dziś wygląda Dariusz Kowalski ...</span>
+                        </div>
                     </div>
                 </div>
                 
-                <br>
+                <div class="podobne">
+                    <h3>Podobne wyszukiwania</h3>
+                    
+                    <div class="podobne_container">
+                        <div class="srodek_container">
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Gdzie mieszka Janusz Tracz</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz zdjęcia</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz plebania</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz żona</b>
+                            </a>
+                        </div>
 
-                <div class="help">
-        
-                  <h3>Podobne wyszukiwania</h3>
-                    <div class="helplists">
-                        <ul class="helpleft">
-                            <a id="helpbar1" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Gdzie mieszka Janusz Tracz</a>
-                            <a id="helpbar2" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Janusz Tracz zdjęcia</a>
-                            <a id="helpbar3" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Janusz Tracz plebania</a>
-                            <a id="helpbar4" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Janusz Tracz żona</a>
-                        </ul>
-                        <ul class="helpright">
-                            <a id="helpbar5" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Janusz Tracz rodzina</a>
-                            <a id="helpbar6" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Janusz Tracz cytaty</a>
-                            <a id="helpbar7" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">JJanusz Tracz memy</a>
-                            <a id="helpbar8" type="text"><img src="lupa.png" class="lupka" alt="Lupa Google" href="#">Janusz Tracz vs Pudzianowski</a>
-                        </ul>
+                        <div class="srodek_container">
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz rodzina</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz cytaty</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz memy</b>
+                            </a>
+                            <a href="#">
+                                <img class="ikona_input lupa" src="lupa.png" />
+                                <b>Janusz Tracz vs Pudzianowski</b>
+                            </a>
+                        </div>
                     </div>
-        
+                    
+                    <div class="srodek_container">
+                        <table class="tablica_google">
+                            <tr>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera niebieski">G</div>
+                                        <div class="number"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a class="obecna" href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera czerwony">o</div>
+                                            <div class="cyfra obecna">1</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">2</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">3</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">4</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">5</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">6</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">7</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">8</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">9</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera zolty">o</div>
+                                            <div class="cyfra">10</div>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera niebieski">g</div>
+                                        <div class="cyfra"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera zielony">l</div>
+                                        <div class="cyfra"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="srodek_container">
+                                        <div class="litera czerwony">e</div>
+                                        <div class="cyfra"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <div class="srodek_container">
+                                            <div class="litera niebieski strzalka">></div>
+                                            <div class="cyfra">Następna</div>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-
-                    <br><br>
-
-                    <table class="googlelist">
-                      <tr>
-                        <td><span class="blue">G</span></td>
-                        <td><span class="red">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="yellow">o</span></td>
-                        <td><span class="blue">g</span></td>
-                        <td><span class="green">l</span></td>
-                        <td><span class="red">e</span></td>
-                        <td rowspan="2" style="width: 10px;"></td>
-                        <td><span class="blue arrow">></span></td>
-                      </tr>
-          
-                      <tr>
-                        <td class="numer"></td>
-                        <td class="numer">1</td>
-                        <td class="numer">2</td>
-                        <td class="numer">3</td>
-                        <td class="numer">4</td>
-                        <td class="numer">5</td>
-                        <td class="numer">6</td>
-                        <td class="numer">7</td>
-                        <td class="numer">8</td>
-                        <td class="numer">9</td>
-                        <td class="numer">10</td>
-                        <td colspan="3"></td>
-                        <td class="numer">Następna</td>
-                      </tr>
-          
-                    </table>
-
         </main>
 
         <footer class="dol">
@@ -248,7 +401,14 @@
                     <a class="sekcja-item link odstep">Dla firm</a>
                     <a class="sekcja-item link odstep">Jak działa wyszukiwania</a>
                 </section>
-                <section class="f_flex_element sekcja druga">
+                
+              <section class="f_flex_element sekcja srodek">
+            
+              
+                <a class="sekcja-item link odstep">  <img src="lisc.png" class="lisc">Neutralność węglowa od 2007  </a>
+                  </section>
+           
+              <section class="f_flex_element sekcja druga">
                     <a class="sekcja-item link">Pomoc</a>
                     <a class="sekcja-item link">Prywatność</a>
                     <a class="sekcja-item link">Warunki</a>
@@ -272,6 +432,20 @@
             skupienie: false,
             zmiana: false,
             zaznaczenie: -1,
+        },
+        updated()
+         {
+            this.$nextTick(() => 
+            {
+                if (this.zmiana)
+                {
+                    this.$refs.top.focus();
+                }
+                else
+                {
+                    this.$refs.bottom.focus();
+                }
+            });
         },
         watch: 
         {
@@ -362,35 +536,4 @@
         }
     })
 </script>
-
-<!-- Próba autocompletera w osobnym pliku
-    var app = new Vue({
-    el: '#start',
-    data: {
- 
-      googleSearch: '',
-      searchedInput:'',
-      filtrowaneMiasta:"",
-      cities: window.cities,
-      filtrowane_miasta_aktualizacja:true,
-      skupienie: false,
-      zmiana: false,
-      zaznaczenie: -1,
-    },
-    methods: {
-      eventHandler: function (id) {
-          console.log(id)
-          console.log("Here")
-        },
-    },
-    aktywne()
-             {
-                if(this.googleSearch.length==0){
-                    this.zmiana=false;
-                }
-                return this.zmiana;
-             },
-         
-  }); -->
-
 </html>
