@@ -185,7 +185,6 @@ body .pczycisk_login:active{
     margin-left: 0px;
     z-index: 10;
 }
-
 .pasek-flex-items{
     height:auto;
 }
@@ -193,65 +192,14 @@ body .pasek-flex:hover,.pasek-flex:active {
     box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
     border-color: rgba(223, 225, 229, 0)
 }
-.home .modul{
-    padding: 5px 19px 0 0;
-    flex: 1;
-    height:100%;
-    display: flex;
-    line-height:normal;
-    justify-content: space-between;
-    align-items: center;
-
-}
 .home img.googleLogo{
-    margin-top: 186px;
+    margin-top: 170px;
     width:272px;
     height: 92px;
     margin-bottom:15px;
     align-items: center;
 }
-body img.ikona_input{
-    width: 20px;
-    height:20px;
-    padding-right: 13px;
-    padding-left: 13px;
-    margin-top: 1.5px;
-}
-body img.ikona_input-keyboard{
-    width: 20px;
-    height: 20px;
-    cursor:pointer;
-    padding-right: 0;
-    padding-left:10px;
-    margin-right:0;
-    margin-bottom: 4px;
-}
-body img.ikona_input-mikrofon{
-    width: 25px;
-    height: 25px;
-    cursor:pointer;
-    padding-right: 0;
-    padding-left:10px;
-    margin-right:0;
-    margin-bottom: 5px;
-}
-body .input_wyszukiwanie{
-    color: transparent;
-    flex: 100%;
-    width:100%;
-    white-space: pre;
-    height: 38px;
-    padding:0;
-    margin:0;
-    background-color: transparent;
-    border: none;
-    color: rgba(0,0,0,.87);
-    word-wrap: break-word;
-    font-size: 16px;
-    align-self: flex-end;
-    margin-bottom:6px;
-    font-size: 18px;
-}
+
 .home .przycisk{
     background-color: #f8f9fa;
     border: 1px solid #f8f9fa;
@@ -329,27 +277,6 @@ body .link-:hover{
     order:1;
     justify-content: flex-start;
 }
-
-.home .srodek 
-{
-padding-left: 18.7px;
-	order: 2;
-	flex: 1;
-display:inline-flex;
-display: inline;
-text-align: center;
-margin-top: 17px;
-
-}
-
-.home .srodek .lisc
-{
- height: 11px;
- margin-right: 6px;
-
-}
-
-
 .home .druga{
     order:3;
     justify-content: flex-end;
@@ -359,9 +286,6 @@ margin-top: 17px;
     display: none;
 }
 .home .dodatek{
-    display: none;
-}
-.home .ikona_input-clear{
     display: none;
 }
 .home .gorny_pasek{
@@ -379,35 +303,6 @@ margin-top: 17px;
 .home .lista{
     display:none;
 }
-.nazwy_miast{
-    display: none;
-    line-height: 0.95rem;
-    border-top: 1px solid #dfe1e5;
-    background-color: #fff;
-    z-index:10;
-    margin-bottom:2px;
-    border-bottom-left-radius: 25%;
-    border-bottom-right-radius: 25%;
-    z-index: 10;
-}
-.nazwy_miast li{
-    padding:0px;
-    cursor: pointer;
-}
-.miasta_lista{
-    display: none;
-    line-height: 1.5rem;
-    border-top: 1px solid #dfe1e5;
-    z-index:10;
-    margin-bottom:18px;
-    border-bottom-left-radius: 25%;
-    border-bottom-right-radius: 25%;
-    z-index: 10;
-}
-.miasta_lista li{
-    padding:2px 0px;
-    cursor: pointer;
-}
 .klasa_skupienie{
     background-color: #dfe1e5;
 }
@@ -423,16 +318,6 @@ margin-top: 17px;
 }
 .zwykly{
     font-weight: 500;
-}
-.lista_elementow:hover,.lista_elementow:active, .lista_elementow:focus{
-    font-style: normal;
-    background-color: #dfe1e5;
-    height: 25px;
-}
-.lista_elementow a{
-    text-decoration: none;
-    color:inherit;
-    font-size: 1.1em; 
 }
 ol, ul {
 	list-style: none;
