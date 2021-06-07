@@ -1,105 +1,147 @@
-Vue.component('v-autocompleter', {
-    template: ' <div class="czesc"><div class="krzyzyk"><img title="Wyczyść" class="ikona_input-clear" src="Obrazki/iks.svg"/><span class="kreska"></span></div><img class="ikona_input-keyboard" src="Obrazki/klawiatura.svg"/><img class="ikona_input-mikrofon" src="Obrazki/mikrofon.png"/><button id="przycisk_szukaj"><img class="ikona_input" src="Obrazki/lupa_2.svg"/></button></div><div  id="wypisz_miasta" class="miasta_lista" :class="{widok : googleSearch.length > 0 /*&& skupienie*/ && filtrowaneMiasta.length>0}" ><ul ><li  v-for="(miasto,index) in filtrowaneMiasta" ><div class="lista_elementow" :class="{klasa_skupienie:index == zaznaczenie}"><img class="ikona_input" src="Obrazki/lupa.svg" /><a href="#" v-html="wytluszcz(miasto)" v-on:click="wybrane(index)"><b>{{ miasto }}</b></a> </div></li></ul></div> ',
-
-    data: function () {
+Vue.component("v-autocompleter", {
+    template: `<div>\
+    <div class='pasek'>\
+    <div class='czesc'>\
+        <img class='inputIcon widocznosc' src='lupa.png'/>\
+        <input class='inputSearch' maxlength='2048'\
+        ref="placeToFocus"\
+        :value="value"\
+        @input="$emit('input', $event.target.value)"\
+         @focus='focused = true'  @keyup.down='dol()' @keyup.up='gora()'\
+         @keyup.enter="$emit('enter')"/> \
+        <div class='iks'>\
+        <img title='Wyczyść' class='inputIcon-clear' src='X.png' aria-label='Wyczyść'\
+            role='button' />\
+        <span class='linia'></span>\
+        </div>\
+        <img title='Narzędzia do wprowadzania tekstu' class='inputIcon-keyboard'\
+                                src='klawiatura.png'/>\
+        <button id='SearchButton'><img class='inputIcon'\
+                                src='lupa_niebieska.png' /></button>\
+        </div>\
+        <div class='miastaNazwy' :class='{widocznosc : value.length > 0 && focused && filteredCities.length>0}' >\
+        <ul >\
+            <li  v-for='(miasto,index) in filteredCities' >\
+                <div class='listaElementow' :class='{liFocused:index == inFocus}'>\
+                    <img class='inputIcon' src='lupa.png' />\
+                        <a href='#' v-html='wytluszcz(miasto)' v-on:click="wybrane(index); $emit('enter')" >\
+                            <b>{{ miasto }}</b></a>\
+                </div>\
+            </li>\
+        </ul>\
+        </div>\
+        </div>\
+        </div>`,
+    model: {
+        event: 'enter'
+    },
+    props: {
+        options:{
+            type: Array
+        },
+          value: {
+            type: String,
+            default: ""
+          }
+        },
+    data() {
         return {
-            googleSearch: '',
-            searchedInput:'',
-            filtrowaneMiasta:"",
-            cities: window.cities,
-            filtrowane_miasta_aktualizacja:true,
-            skupienie: false,
-            zmiana: false,
-            zaznaczenie: -1,
+           // value: '',
+            filteredCities: "",
+            update_filteredCities: true,
+            focused: false,
+            change: false,
+            inFocus: -1,
+            searchedInput: '',
         }
     },
-    watch: 
-        {
-            zaznaczenie: function () 
-            {
-            this.filtrowane_miasta_aktualizacja=false;
-            this.googleSearch=this.filtrowaneMiasta[this.zaznaczenie].name;
-            },
-            googleSearch: function()
-            {
-                this.filtrowane_miasta_utworz(this.filtrowane_miasta_aktualizacja);
-                this.filtrowane_miasta_aktualizacja=true;
-                console.log(this.filtrowaneMiasta);
-                if(this.zaznaczenie==-1)
-                {
-                    this.searchedInput=this.googleSearch;      
-                }
+    computed:{
+        aktywne() {
+            if (this.value.length == 0) {
+                this.change = false;
+            }
+            return this.change;
+
+        }
+     },
+    watch: {
+        // whenever question changes, this function will run
+        inFocus: function () {
+            this.update_filteredCities = false;
+            this.value = this.filteredCities[this.inFocus].name;
+
+        },
+        value: function () {
+            this.filtrowane_miasta_utworz(this.update_filteredCities);
+            this.update_filteredCities = true;
+            if (this.inFocus == -1) {
+                this.searchedInput = this.value;
+
+            }
+            this.results();
+        }
+    },
+    methods: {
+        wytluszcz(miasto) {
+            let re = new RegExp(this.searchedInput, "gi");
+            let bolden = "<b>" + miasto.name.replace(re, match => {
+                return "<span class='normal'>" + match + "</span>";
+            }) + "</b>";
+
+            return bolden;
+        },
+        enter() {
+            this.update_filteredCities = true;
+            this.change = true;
+            this.inFocus = -1;
+            this.focused = false;
+            this.results();
+            return this.value
+        },
+        wybrane(i) {
+            this.value = this.filteredCities[i].name;
+        },
+        
+        dol() {
+            if (this.inFocus < this.filteredCities.length - 1) {
+                this.inFocus += 1;
+            }
+            else if (this.inFocus == this.filteredCities.length - 1) {
+                this.inFocus = 0;
             }
         },
-        methods:
-        {
-            enter() 
-            {
-                this.filtrowaneMiasta=true;
-                this.zmiana= true;
-                this.zaznaczenie=-1;
-                this.skupienie = false;
-             },
-            dol()
-            {
-                if(this.zaznaczenie<this.filtrowaneMiasta.length-1)
-                {
-                    this.zaznaczenie+=1; 
+        gora() {
+            if (this.inFocus > 0) {
+                this.inFocus -= 1;
+            }
+            else if (this.inFocus == 0) {
+                this.inFocus = this.filteredCities.length - 1;
+            }
+        },
+        filtrowane_miasta_utworz(yes) {
+            if (yes) {
+                let result = this.options.filter(miasto => miasto.name.includes(this.value));
+                if (result.length > 10) {
+                    this.filteredCities = result.slice(1, 11);
                 }
-                else if(this.zaznaczenie==this.filtrowaneMiasta.length-1)
-                {
-                    this.zaznaczenie=0; 
+                else {
+                    this.filteredCities = result;
                 }
-             },
-             gora()
-             {
-                if(this.zaznaczenie>0)
-                {
-                    this.zaznaczenie-=1; 
-                }
-                else if(this.zaznaczenie==0)
-                {
-                    this.zaznaczenie=this.filtrowaneMiasta.length-1;
-                }
-             },
-             wybrane(i)
-             {
-                this.googleSearch=this.filtrowaneMiasta[i].name;
-                this.enter();
-             },
-             aktywne()
-             {
-                if(this.googleSearch.length==0){
-                    this.zmiana=false;
-                }
-                return this.zmiana;
-             },
-             filtrowane_miasta_utworz(prawda)
-             {
-                 if(prawda)
-                 {
-                    let result=this.cities.filter(miasto => miasto.name.includes(this.googleSearch));
-                    if(result.length>10)
-                    {
-                        this.filtrowaneMiasta= result.slice(1, 11);
-                    }
-                    else{
-                        this.filtrowaneMiasta= result;
-                    }
-                    this.zaznaczenie=-1;
-                 }   
-             },
-             wytluszcz(miasto)
-            {
-                let re = new RegExp(this.searchedInput,"gi");
-                let bolden="<b>"+miasto.name.replace(re, match=>
-                    {
-                     return "<span class='zwykly'>"+ match+"</span>";
-                    })+"</b>";
-                console.log(bolden);
-                return bolden;
-            }      
+                this.inFocus = -1;
+            }
+        },
+        results() {
+           
+            if (this.aktywne) {
+                document.getElementById("app").classList.add('results');
+
+            }
+            else if(  document.getElementById("app").classList.contains('results')){
+                document.getElementById("app").classList.remove('results');
+
+            }
+
         }
-    })
-    margin:0px;
-}
+
+    }
+})
